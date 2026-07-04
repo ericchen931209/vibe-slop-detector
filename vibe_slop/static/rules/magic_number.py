@@ -30,11 +30,11 @@ def check(tree: Node, lines: list[str]) -> list[Finding]:
     def walk(node: Node) -> None:
         if node.type == "integer" or node.type == "float":
             try:
-                val = float(node.text.decode())
+                numeric = float(node.text.decode())
             except ValueError:
-                val = None
+                numeric = None
 
-            if val is not None and val not in _ALLOWED and not _in_assignment_value(node):
+            if numeric is not None and numeric not in _ALLOWED and not _in_assignment_value(node):
                 parent = node.parent
                 # Only flag numbers that appear in conditions, slices, arithmetic
                 if parent and parent.type in (

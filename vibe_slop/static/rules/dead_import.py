@@ -10,12 +10,29 @@ CATEGORY_NAME = "Dead Import"
 def _collect_imports(node: Node) -> list[tuple[str, int]]:
     """Return list of (name, line) for all imported names."""
     imports = []
-    if node.type in ("import_statement", "import_from_statement"):
+    if node.type == "import_statement":
+        # `import foo` or `import foo as bar` — collect top-level name or alias
         line = node.start_point[0] + 1
         for child in node.named_children:
             if child.type == "dotted_name":
-                imports.append((child.text.decode(), line))
+                top = child.named_children[0] if child.named_children else child
+                imports.append((top.text.decode(), line))
             elif child.type == "aliased_import":
+                alias = child.child_by_field_name("alias")
+                name = child.child_by_field_name("name")
+                token = alias or name
+                if token:
+                    imports.append((token.text.decode(), line))
+    elif node.type == "import_from_statement":
+        # `from foo import Bar, Baz` — skip the module (first dotted_name),
+        # collect only the imported symbols
+        line = node.start_point[0] + 1
+        skipped_module = False
+        for child in node.named_children:
+            if not skipped_module and child.type in ("dotted_name", "relative_import"):
+                skipped_module = True
+                continue
+            if child.type == "aliased_import":
                 alias = child.child_by_field_name("alias")
                 name = child.child_by_field_name("name")
                 token = alias or name
@@ -23,6 +40,9 @@ def _collect_imports(node: Node) -> list[tuple[str, int]]:
                     imports.append((token.text.decode(), line))
             elif child.type == "identifier":
                 imports.append((child.text.decode(), line))
+            elif child.type == "dotted_name":
+                top = child.named_children[0] if child.named_children else child
+                imports.append((top.text.decode(), line))
     for child in node.children:
         imports.extend(_collect_imports(child))
     return imports

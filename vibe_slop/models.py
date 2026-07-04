@@ -54,9 +54,10 @@ class FileReport:
             self.band = "Clean"
             return
 
+        SCORE_SCALE = 10
         raw = sum(SEVERITY_WEIGHT[f.severity] for f in self.findings)
         normalizer = max(total_lines / 100, 1)
-        self.score = min(100, round(raw / normalizer * 10))
+        self.score = min(100, round(raw / normalizer * SCORE_SCALE))
 
         for threshold, label in SCORE_BANDS:
             if self.score <= threshold:

@@ -52,19 +52,19 @@ def analyze_file(path: Path) -> list[Finding]:
 
     lines = source.splitlines()
     findings = []
-    for item in items:
-        cat = item.get("category", "")
+    for finding_data in items:
+        cat = finding_data.get("category", "")
         if cat not in CATEGORY_MAP:
             continue
         name, severity = CATEGORY_MAP[cat]
-        line = int(item.get("line", 0))
+        line = int(finding_data.get("line", 0))
         findings.append(Finding(
             category=cat,
             category_name=name,
             severity=severity,
             layer=Layer.LLM,
             line=line,
-            detail=item.get("detail", ""),
+            detail=finding_data.get("detail", ""),
             snippet=lines[line - 1].strip() if 0 < line <= len(lines) else "",
         ))
     return findings

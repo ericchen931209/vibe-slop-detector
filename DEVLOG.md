@@ -65,10 +65,62 @@
 
 ---
 
-## 下一步
+---
 
-- [ ] 初始化專案結構（pyproject.toml、資料夾）
-- [ ] 實作 Static Layer（tree-sitter，先支援 Python）
-- [ ] 實作 LLM Judge（Claude API）
-- [ ] 實作 CLI（typer）
-- [ ] 實作雙軌 Report 輸出
+## 2026-07-04 — 實作 v0.1
+
+### 專案結構
+
+```
+vibe_slop/
+├── models.py         # Finding, FileReport, Severity, Layer 資料型別
+├── analyzer.py       # 協調 static + LLM 兩層分析
+├── cli.py            # typer CLI (check, rules 兩個子命令)
+├── static/
+│   ├── engine.py     # tree-sitter 解析 + 呼叫各 rule
+│   └── rules/        # 每個 slop 類別一個檔案
+│       ├── ai_signature.py     (S2)
+│       ├── dead_import.py      (S4)
+│       ├── false_safety_net.py (S9)
+│       ├── generic_naming.py   (S6)
+│       ├── god_function.py     (S3)
+│       ├── magic_number.py     (S8)
+│       ├── todo_graveyard.py   (S13)
+│       └── void_abstraction.py (S7)
+├── llm/
+│   └── judge.py      # Claude API judge (S1, S10, S11)
+└── report/
+    ├── human.py      # rich 終端輸出
+    └── machine.py    # JSON 輸出
+```
+
+### 技術決策
+
+**Typer subcommand routing 問題**
+只有一個 `@app.command()` 時，typer 不做 subcommand routing，`check` 會被吃掉當作 TARGET 參數。
+解法：加 `rules` 子命令，讓 app 有兩個命令，routing 自動啟動。
+
+**LLM 失敗不終止程式**
+LLM Judge（`--llm`）失敗時，保留 static 結果繼續輸出，只在 error 欄位紀錄錯誤。
+理由：網路/API key 問題不應該讓整個分析失敗。
+
+**S7 noqa 機制**
+`# noqa: S7` 可以在單行抑制 Void Abstraction 警告，供 delegation pattern 使用。
+
+### 測試結果
+
+對 `tests/fixtures/sample_slop.py` 掃描，偵測到 9 個問題，分數 100/100（Slop）：
+- S2: "Certainly" 在第 1 行
+- S4: json, os, threading 三個 dead import
+- S6: "result" 出現 4 次
+- S7: get_name 是 void abstraction
+- S3: fetch 有 8 個參數
+- S9: bare except: pass
+- S13: 4 個 TODO/FIXME
+
+### 待處理
+
+- [ ] 推到 GitHub（需要 `gh auth login`）
+- [ ] 實作 Copy-Paste Clone（S5）— 需要 token similarity 演算法
+- [ ] 實作 Defensive Over-checking（S12）— Static + LLM
+- [ ] 擴展語言支援：JavaScript / TypeScript

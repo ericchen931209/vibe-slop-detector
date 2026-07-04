@@ -7,7 +7,8 @@ from vibe_slop.models import Finding, Layer, Severity
 CATEGORY = "S13"
 CATEGORY_NAME = "TODO Graveyard"
 
-_MARKER = re.compile(r"\b(TODO|FIXME|HACK|XXX)\b", re.IGNORECASE)
+# Only match markers inside comments (after #), not in strings or docstrings
+_MARKER = re.compile(r"#[^#\n]*\b(TODO|FIXME|HACK|XXX)\b", re.IGNORECASE)
 _THRESHOLD_MEDIUM = 3
 _THRESHOLD_HIGH = 7
 

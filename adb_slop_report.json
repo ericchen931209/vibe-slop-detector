@@ -1,0 +1,4167 @@
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/backend/app/__init__.py",
+  "score": 0,
+  "band": "Clean",
+  "error": null,
+  "findings": []
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/backend/app/api/__init__.py",
+  "score": 0,
+  "band": "Clean",
+  "error": null,
+  "findings": []
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/backend/app/api/v1/__init__.py",
+  "score": 0,
+  "band": "Clean",
+  "error": null,
+  "findings": []
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/backend/app/api/v1/datasets.py",
+  "score": 100,
+  "band": "Slop",
+  "error": null,
+  "findings": [
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 34,
+      "detail": "Magic number 50 — consider naming it as a constant",
+      "snippet": "name = payload.name or f\"Dataset: {payload.query[:50]}\""
+    },
+    {
+      "category": "S3",
+      "category_name": "God Function",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 112,
+      "detail": "\"export_dataset\" is 56 lines long (threshold: 50)",
+      "snippet": "def export_dataset("
+    },
+    {
+      "category": "S3",
+      "category_name": "God Function",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 200,
+      "detail": "\"create_version\" is 60 lines long (threshold: 50)",
+      "snippet": "def create_version("
+    }
+  ]
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/backend/app/api/v1/jobs.py",
+  "score": 100,
+  "band": "Slop",
+  "error": null,
+  "findings": []
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/backend/app/api/v1/router.py",
+  "score": 60,
+  "band": "Sloppy",
+  "error": null,
+  "findings": []
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/backend/app/core/__init__.py",
+  "score": 0,
+  "band": "Clean",
+  "error": null,
+  "findings": []
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/backend/app/core/config.py",
+  "score": 60,
+  "band": "Sloppy",
+  "error": null,
+  "findings": []
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/backend/app/db/__init__.py",
+  "score": 0,
+  "band": "Clean",
+  "error": null,
+  "findings": []
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/backend/app/db/base.py",
+  "score": 80,
+  "band": "Very Sloppy",
+  "error": null,
+  "findings": []
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/backend/app/db/models.py",
+  "score": 100,
+  "band": "Slop",
+  "error": null,
+  "findings": [
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 42,
+      "detail": "Magic number 255 — consider naming it as a constant",
+      "snippet": "name = Column(String(255), nullable=False)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 45,
+      "detail": "Magic number 20 — consider naming it as a constant",
+      "snippet": "version = Column(String(20), default=\"0.1\")"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 49,
+      "detail": "Magic number 50 — consider naming it as a constant",
+      "snippet": "task_type = Column(String(50), nullable=True)     # object_detection, segmentation, etc."
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 78,
+      "detail": "Magic number 255 — consider naming it as a constant",
+      "snippet": "filename = Column(String(255), nullable=False)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 79,
+      "detail": "Magic number 512 — consider naming it as a constant",
+      "snippet": "storage_path = Column(String(512), nullable=False)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 80,
+      "detail": "Magic number 1024 — consider naming it as a constant",
+      "snippet": "source_url = Column(String(1024), nullable=True)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 81,
+      "detail": "Magic number 50 — consider naming it as a constant",
+      "snippet": "source_type = Column(String(50), nullable=True)   # youtube, google_images, camera"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 138,
+      "detail": "Magic number 255 — consider naming it as a constant",
+      "snippet": "celery_task_id = Column(String(255), nullable=True)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 140,
+      "detail": "Magic number 512 — consider naming it as a constant",
+      "snippet": "progress_message = Column(String(512), nullable=True)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 157,
+      "detail": "Magic number 20 — consider naming it as a constant",
+      "snippet": "version_tag = Column(String(20), nullable=False)     # v1.0, v1.1, ..."
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 158,
+      "detail": "Magic number 512 — consider naming it as a constant",
+      "snippet": "snapshot_path = Column(String(512), nullable=True)   # zip path"
+    }
+  ]
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/backend/app/main.py",
+  "score": 100,
+  "band": "Slop",
+  "error": null,
+  "findings": []
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/backend/app/schemas/__init__.py",
+  "score": 0,
+  "band": "Clean",
+  "error": null,
+  "findings": []
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/backend/app/schemas/dataset.py",
+  "score": 60,
+  "band": "Sloppy",
+  "error": null,
+  "findings": []
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/backend/app/services/exporter.py",
+  "score": 100,
+  "band": "Slop",
+  "error": null,
+  "findings": [
+    {
+      "category": "S6",
+      "category_name": "Generic Naming",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 35,
+      "detail": "\"val\" used 5 times — consider a domain-specific name",
+      "snippet": ""
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 57,
+      "detail": "Magic number 5 — consider naming it as a constant",
+      "snippet": "if len(p) >= 5:"
+    },
+    {
+      "category": "S9",
+      "category_name": "False Safety Net",
+      "severity": "HIGH",
+      "layer": "static",
+      "line": 63,
+      "detail": "Exception handler silently swallows errors (no re-raise)",
+      "snippet": "except OSError:"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 71,
+      "detail": "Magic number 65536 — consider naming it as a constant",
+      "snippet": "for chunk in iter(lambda: f.read(65536), b\"\"):"
+    },
+    {
+      "category": "S3",
+      "category_name": "God Function",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 78,
+      "detail": "\"export_yolo\" is 76 lines long (threshold: 50)",
+      "snippet": "def export_yolo("
+    },
+    {
+      "category": "S3",
+      "category_name": "God Function",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 78,
+      "detail": "\"export_yolo\" has 8 parameters (threshold: 7)",
+      "snippet": "def export_yolo("
+    },
+    {
+      "category": "S3",
+      "category_name": "God Function",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 159,
+      "detail": "\"export_coco\" is 99 lines long (threshold: 50)",
+      "snippet": "def export_coco("
+    }
+  ]
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/backend/app/services/version_control.py",
+  "score": 100,
+  "band": "Slop",
+  "error": null,
+  "findings": [
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 29,
+      "detail": "Magic number 65536 — consider naming it as a constant",
+      "snippet": "for chunk in iter(lambda: f.read(65536), b\"\"):"
+    },
+    {
+      "category": "S3",
+      "category_name": "God Function",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 44,
+      "detail": "\"create_snapshot\" is 83 lines long (threshold: 50)",
+      "snippet": "def create_snapshot("
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 118,
+      "detail": "Magic number 65536 — consider naming it as a constant",
+      "snippet": "for chunk in iter(lambda: f.read(65536), b\"\"):"
+    }
+  ]
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/models/__init__.py",
+  "score": 0,
+  "band": "Clean",
+  "error": null,
+  "findings": []
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/models/dqs/__init__.py",
+  "score": 0,
+  "band": "Clean",
+  "error": null,
+  "findings": []
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/models/dqs/feature_extractor.py",
+  "score": 100,
+  "band": "Slop",
+  "error": null,
+  "findings": [
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 77,
+      "detail": "Magic number 5 — consider naming it as a constant",
+      "snippet": "if len(parts) < 5:"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 82,
+      "detail": "Magic number 0.005 — consider naming it as a constant",
+      "snippet": "if 0.005 <= area <= 0.70:"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 82,
+      "detail": "Magic number 0.70 — consider naming it as a constant",
+      "snippet": "if 0.005 <= area <= 0.70:"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 90,
+      "detail": "Magic number 0.6 — consider naming it as a constant",
+      "snippet": "return 0.6 * completeness + 0.4 * geometry"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 90,
+      "detail": "Magic number 0.4 — consider naming it as a constant",
+      "snippet": "return 0.6 * completeness + 0.4 * geometry"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 111,
+      "detail": "Magic number 85 — consider naming it as a constant",
+      "snippet": "if mean_v < 85:"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 113,
+      "detail": "Magic number 170 — consider naming it as a constant",
+      "snippet": "elif mean_v < 170:"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 146,
+      "detail": "Magic number 5 — consider naming it as a constant",
+      "snippet": "if len(parts) < 5:"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 152,
+      "detail": "Magic number 0.5 — consider naming it as a constant",
+      "snippet": "if r < 0.5:"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 265,
+      "detail": "Magic number 1e-8 — consider naming it as a constant",
+      "snippet": "hist = hist / (hist.sum() + 1e-8)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 310,
+      "detail": "Magic number 3 — consider naming it as a constant",
+      "snippet": "denoised = cv2.medianBlur(img, 3)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 314,
+      "detail": "Magic number 1.5 — consider naming it as a constant",
+      "snippet": "smooth = cv2.GaussianBlur(img, (5, 5), 1.5)"
+    }
+  ]
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/models/dqs/neural_dqs.py",
+  "score": 100,
+  "band": "Slop",
+  "error": null,
+  "findings": [
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 66,
+      "detail": "Magic number 5 — consider naming it as a constant",
+      "snippet": "if len(X) < 5:"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 82,
+      "detail": "Magic number 10 — consider naming it as a constant",
+      "snippet": "if len(X) >= 10:"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 84,
+      "detail": "Magic number 5 — consider naming it as a constant",
+      "snippet": "cv = KFold(n_splits=min(5, len(X)), shuffle=True, random_state=42)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 182,
+      "detail": "Magic number 1e-6 — consider naming it as a constant",
+      "snippet": "arr = np.clip(np.array(features, dtype=np.float64), 1e-6, 1.0)"
+    }
+  ]
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/models/dqs/train_dqs.py",
+  "score": 100,
+  "band": "Slop",
+  "error": null,
+  "findings": [
+    {
+      "category": "S6",
+      "category_name": "Generic Naming",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 28,
+      "detail": "\"data\" used 4 times — consider a domain-specific name",
+      "snippet": ""
+    },
+    {
+      "category": "S6",
+      "category_name": "Generic Naming",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 31,
+      "detail": "\"item\" used 4 times — consider a domain-specific name",
+      "snippet": ""
+    }
+  ]
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/tests/__init__.py",
+  "score": 0,
+  "band": "Clean",
+  "error": null,
+  "findings": []
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/tests/test_all.py",
+  "score": 100,
+  "band": "Slop",
+  "error": null,
+  "findings": [
+    {
+      "category": "S6",
+      "category_name": "Generic Naming",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 17,
+      "detail": "\"results\" used 47 times — consider a domain-specific name",
+      "snippet": ""
+    },
+    {
+      "category": "S3",
+      "category_name": "God Function",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 31,
+      "detail": "\"make_image\" has 8 parameters (threshold: 7)",
+      "snippet": "def make_image(path, w=640, h=480, color=(100,100,100), blur=False, dark=False, bright=False, noise=False):"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 32,
+      "detail": "Magic number 31 — consider naming it as a constant",
+      "snippet": "rng = np.random.default_rng(abs(hash(path)) % (2**31))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 36,
+      "detail": "Magic number 40 — consider naming it as a constant",
+      "snippet": "img = (img.astype(np.int32) + rng.integers(-40, 40, img.shape)).clip(0, 255).astype(np.uint8)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 36,
+      "detail": "Magic number 255 — consider naming it as a constant",
+      "snippet": "img = (img.astype(np.int32) + rng.integers(-40, 40, img.shape)).clip(0, 255).astype(np.uint8)"
+    },
+    {
+      "category": "S6",
+      "category_name": "Generic Naming",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 59,
+      "detail": "\"result\" used 38 times — consider a domain-specific name",
+      "snippet": ""
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 137,
+      "detail": "Magic number 0.8 — consider naming it as a constant",
+      "snippet": "assert ld > 0.8, f\"expected near-max LD with 3 buckets, got {ld:.3f}\""
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 150,
+      "detail": "Magic number 5 — consider naming it as a constant",
+      "snippet": "for i in range(5):"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 158,
+      "detail": "Magic number 9 — consider naming it as a constant",
+      "snippet": "for i in range(9):"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 162,
+      "detail": "Magic number 0.5 — consider naming it as a constant",
+      "snippet": "assert cb < 0.5, f\"imbalanced should be < 0.5, got {cb}\""
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 171,
+      "detail": "Magic number 0.8 — consider naming it as a constant",
+      "snippet": "assert pd > 0.8, f\"varied aspect ratios should give high PD, got {pd:.3f}\""
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 188,
+      "detail": "Magic number 42 — consider naming it as a constant",
+      "snippet": "rng = np.random.default_rng(42)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 190,
+      "detail": "Magic number 0.2 — consider naming it as a constant",
+      "snippet": "features = rng.uniform(0.2, 0.9, (n, 5)).tolist()"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 190,
+      "detail": "Magic number 0.9 — consider naming it as a constant",
+      "snippet": "features = rng.uniform(0.2, 0.9, (n, 5)).tolist()"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 191,
+      "detail": "Magic number 0.95 — consider naming it as a constant",
+      "snippet": "maps = [min(0.95, sum(f)/5 * 0.9 + rng.uniform(0, 0.05)) for f in features]"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 191,
+      "detail": "Magic number 5 — consider naming it as a constant",
+      "snippet": "maps = [min(0.95, sum(f)/5 * 0.9 + rng.uniform(0, 0.05)) for f in features]"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 191,
+      "detail": "Magic number 0.9 — consider naming it as a constant",
+      "snippet": "maps = [min(0.95, sum(f)/5 * 0.9 + rng.uniform(0, 0.05)) for f in features]"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 191,
+      "detail": "Magic number 0.05 — consider naming it as a constant",
+      "snippet": "maps = [min(0.95, sum(f)/5 * 0.9 + rng.uniform(0, 0.05)) for f in features]"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 198,
+      "detail": "Magic number 0.5 — consider naming it as a constant",
+      "snippet": "assert metrics[\"pearson_r\"] > 0.5, f\"Pearson r too low: {metrics['pearson_r']:.3f}\""
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 206,
+      "detail": "Magic number 0.8 — consider naming it as a constant",
+      "snippet": "f = DQSFeatures(0.8, 0.6, 0.7, 0.5, 1.0, 0.9)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 206,
+      "detail": "Magic number 0.6 — consider naming it as a constant",
+      "snippet": "f = DQSFeatures(0.8, 0.6, 0.7, 0.5, 1.0, 0.9)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 206,
+      "detail": "Magic number 0.7 — consider naming it as a constant",
+      "snippet": "f = DQSFeatures(0.8, 0.6, 0.7, 0.5, 1.0, 0.9)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 206,
+      "detail": "Magic number 0.5 — consider naming it as a constant",
+      "snippet": "f = DQSFeatures(0.8, 0.6, 0.7, 0.5, 1.0, 0.9)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 206,
+      "detail": "Magic number 0.9 — consider naming it as a constant",
+      "snippet": "f = DQSFeatures(0.8, 0.6, 0.7, 0.5, 1.0, 0.9)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 208,
+      "detail": "Magic number 6 — consider naming it as a constant",
+      "snippet": "assert len(v) == 6"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 218,
+      "detail": "Magic number 3 — consider naming it as a constant",
+      "snippet": "assert len(expanded) > 3"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 233,
+      "detail": "Magic number 10 — consider naming it as a constant",
+      "snippet": "out = cv2.VideoWriter(video_path, cv2.VideoWriter_fourcc(*\"mp4v\"), 10, (64, 64))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 234,
+      "detail": "Magic number 10 — consider naming it as a constant",
+      "snippet": "for _ in range(10):"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 235,
+      "detail": "Magic number 255 — consider naming it as a constant",
+      "snippet": "frame = np.random.randint(0, 255, (64, 64, 3), dtype=np.uint8)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 241,
+      "detail": "Magic number 10 — consider naming it as a constant",
+      "snippet": "assert result.total_frames == 10"
+    },
+    {
+      "category": "S9",
+      "category_name": "False Safety Net",
+      "severity": "HIGH",
+      "layer": "static",
+      "line": 256,
+      "detail": "Exception handler silently swallows errors (no re-raise)",
+      "snippet": "except Exception:"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 272,
+      "detail": "Magic number 400 — consider naming it as a constant",
+      "snippet": "assert e.status_code == 400"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 290,
+      "detail": "Magic number 0.5 — consider naming it as a constant",
+      "snippet": "box = BoundingBox(0, \"car\", 0.5, 0.5, 0.3, 0.2, 0.9)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 290,
+      "detail": "Magic number 0.5 — consider naming it as a constant",
+      "snippet": "box = BoundingBox(0, \"car\", 0.5, 0.5, 0.3, 0.2, 0.9)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 290,
+      "detail": "Magic number 0.3 — consider naming it as a constant",
+      "snippet": "box = BoundingBox(0, \"car\", 0.5, 0.5, 0.3, 0.2, 0.9)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 290,
+      "detail": "Magic number 0.2 — consider naming it as a constant",
+      "snippet": "box = BoundingBox(0, \"car\", 0.5, 0.5, 0.3, 0.2, 0.9)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 290,
+      "detail": "Magic number 0.9 — consider naming it as a constant",
+      "snippet": "box = BoundingBox(0, \"car\", 0.5, 0.5, 0.3, 0.2, 0.9)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 303,
+      "detail": "Magic number 0.5 — consider naming it as a constant",
+      "snippet": "box = BoundingBox(0, \"motorcycle\", 0.5, 0.5, 0.3, 0.2, 0.9)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 303,
+      "detail": "Magic number 0.5 — consider naming it as a constant",
+      "snippet": "box = BoundingBox(0, \"motorcycle\", 0.5, 0.5, 0.3, 0.2, 0.9)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 303,
+      "detail": "Magic number 0.3 — consider naming it as a constant",
+      "snippet": "box = BoundingBox(0, \"motorcycle\", 0.5, 0.5, 0.3, 0.2, 0.9)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 303,
+      "detail": "Magic number 0.2 — consider naming it as a constant",
+      "snippet": "box = BoundingBox(0, \"motorcycle\", 0.5, 0.5, 0.3, 0.2, 0.9)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 303,
+      "detail": "Magic number 0.9 — consider naming it as a constant",
+      "snippet": "box = BoundingBox(0, \"motorcycle\", 0.5, 0.5, 0.3, 0.2, 0.9)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 317,
+      "detail": "Magic number 20 — consider naming it as a constant",
+      "snippet": "mask[20:80, 10:90] = True"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 317,
+      "detail": "Magic number 80 — consider naming it as a constant",
+      "snippet": "mask[20:80, 10:90] = True"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 317,
+      "detail": "Magic number 10 — consider naming it as a constant",
+      "snippet": "mask[20:80, 10:90] = True"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 317,
+      "detail": "Magic number 90 — consider naming it as a constant",
+      "snippet": "mask[20:80, 10:90] = True"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 318,
+      "detail": "Magic number 0.5 — consider naming it as a constant",
+      "snippet": "original = BoundingBox(0, \"test\", 0.5, 0.5, 0.3, 0.3, 0.9)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 318,
+      "detail": "Magic number 0.5 — consider naming it as a constant",
+      "snippet": "original = BoundingBox(0, \"test\", 0.5, 0.5, 0.3, 0.3, 0.9)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 318,
+      "detail": "Magic number 0.3 — consider naming it as a constant",
+      "snippet": "original = BoundingBox(0, \"test\", 0.5, 0.5, 0.3, 0.3, 0.9)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 318,
+      "detail": "Magic number 0.3 — consider naming it as a constant",
+      "snippet": "original = BoundingBox(0, \"test\", 0.5, 0.5, 0.3, 0.3, 0.9)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 318,
+      "detail": "Magic number 0.9 — consider naming it as a constant",
+      "snippet": "original = BoundingBox(0, \"test\", 0.5, 0.5, 0.3, 0.3, 0.9)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 320,
+      "detail": "Magic number 0.495 — consider naming it as a constant",
+      "snippet": "assert abs(refined.x_center - 0.495) < 0.01    # (10+89)/2 / 100 = 49.5/100"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 320,
+      "detail": "Magic number 0.01 — consider naming it as a constant",
+      "snippet": "assert abs(refined.x_center - 0.495) < 0.01    # (10+89)/2 / 100 = 49.5/100"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 321,
+      "detail": "Magic number 0.495 — consider naming it as a constant",
+      "snippet": "assert abs(refined.y_center - 0.495) < 0.01    # (20+79)/2 / 100 = 49.5/100"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 321,
+      "detail": "Magic number 0.01 — consider naming it as a constant",
+      "snippet": "assert abs(refined.y_center - 0.495) < 0.01    # (20+79)/2 / 100 = 49.5/100"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 322,
+      "detail": "Magic number 0.79 — consider naming it as a constant",
+      "snippet": "assert abs(refined.width  - 0.79) < 0.01       # (89-10)/100  (slice [10:90] → max col=89)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 322,
+      "detail": "Magic number 0.01 — consider naming it as a constant",
+      "snippet": "assert abs(refined.width  - 0.79) < 0.01       # (89-10)/100  (slice [10:90] → max col=89)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 323,
+      "detail": "Magic number 0.59 — consider naming it as a constant",
+      "snippet": "assert abs(refined.height - 0.59) < 0.01       # (79-20)/100  (slice [20:80] → max row=79)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 323,
+      "detail": "Magic number 0.01 — consider naming it as a constant",
+      "snippet": "assert abs(refined.height - 0.59) < 0.01       # (79-20)/100  (slice [20:80] → max row=79)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 334,
+      "detail": "Magic number 0.5 — consider naming it as a constant",
+      "snippet": "box = BoundingBox(0, \"motorcycle\", 0.5, 0.5, 0.3, 0.2, 0.8)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 334,
+      "detail": "Magic number 0.5 — consider naming it as a constant",
+      "snippet": "box = BoundingBox(0, \"motorcycle\", 0.5, 0.5, 0.3, 0.2, 0.8)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 334,
+      "detail": "Magic number 0.3 — consider naming it as a constant",
+      "snippet": "box = BoundingBox(0, \"motorcycle\", 0.5, 0.5, 0.3, 0.2, 0.8)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 334,
+      "detail": "Magic number 0.2 — consider naming it as a constant",
+      "snippet": "box = BoundingBox(0, \"motorcycle\", 0.5, 0.5, 0.3, 0.2, 0.8)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 334,
+      "detail": "Magic number 0.8 — consider naming it as a constant",
+      "snippet": "box = BoundingBox(0, \"motorcycle\", 0.5, 0.5, 0.3, 0.2, 0.8)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 348,
+      "detail": "Magic number 0.5 — consider naming it as a constant",
+      "snippet": "low_conf  = BoundingBox(0, \"cat\", 0.5, 0.5, 0.3, 0.2, confidence=0.30)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 348,
+      "detail": "Magic number 0.5 — consider naming it as a constant",
+      "snippet": "low_conf  = BoundingBox(0, \"cat\", 0.5, 0.5, 0.3, 0.2, confidence=0.30)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 348,
+      "detail": "Magic number 0.3 — consider naming it as a constant",
+      "snippet": "low_conf  = BoundingBox(0, \"cat\", 0.5, 0.5, 0.3, 0.2, confidence=0.30)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 348,
+      "detail": "Magic number 0.2 — consider naming it as a constant",
+      "snippet": "low_conf  = BoundingBox(0, \"cat\", 0.5, 0.5, 0.3, 0.2, confidence=0.30)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 349,
+      "detail": "Magic number 0.5 — consider naming it as a constant",
+      "snippet": "high_conf = BoundingBox(0, \"cat\", 0.5, 0.5, 0.3, 0.2, confidence=0.90)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 349,
+      "detail": "Magic number 0.5 — consider naming it as a constant",
+      "snippet": "high_conf = BoundingBox(0, \"cat\", 0.5, 0.5, 0.3, 0.2, confidence=0.90)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 349,
+      "detail": "Magic number 0.3 — consider naming it as a constant",
+      "snippet": "high_conf = BoundingBox(0, \"cat\", 0.5, 0.5, 0.3, 0.2, confidence=0.90)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 349,
+      "detail": "Magic number 0.2 — consider naming it as a constant",
+      "snippet": "high_conf = BoundingBox(0, \"cat\", 0.5, 0.5, 0.3, 0.2, confidence=0.90)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 354,
+      "detail": "Magic number 0.5 — consider naming it as a constant",
+      "snippet": "assert any(b.confidence >= 0.5 for b in results[0].boxes)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 361,
+      "detail": "Magic number 0.5 — consider naming it as a constant",
+      "snippet": "box = BoundingBox(0, \"motorcycle\", 0.5, 0.5, 0.3, 0.2, confidence=0.8)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 361,
+      "detail": "Magic number 0.5 — consider naming it as a constant",
+      "snippet": "box = BoundingBox(0, \"motorcycle\", 0.5, 0.5, 0.3, 0.2, confidence=0.8)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 361,
+      "detail": "Magic number 0.3 — consider naming it as a constant",
+      "snippet": "box = BoundingBox(0, \"motorcycle\", 0.5, 0.5, 0.3, 0.2, confidence=0.8)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 361,
+      "detail": "Magic number 0.2 — consider naming it as a constant",
+      "snippet": "box = BoundingBox(0, \"motorcycle\", 0.5, 0.5, 0.3, 0.2, confidence=0.8)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 392,
+      "detail": "Magic number 5 — consider naming it as a constant",
+      "snippet": "assert s.total_images == 5"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 393,
+      "detail": "Magic number 3 — consider naming it as a constant",
+      "snippet": "assert s.sam2_refined == 3"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 531,
+      "detail": "Magic number 0.77 — consider naming it as a constant",
+      "snippet": "assert box.confidence == 0.77"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 568,
+      "detail": "Magic number 0.30 — consider naming it as a constant",
+      "snippet": "assert result[0].min_confidence == 0.30"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 574,
+      "detail": "Magic number 5 — consider naming it as a constant",
+      "snippet": "for i in range(5):"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 579,
+      "detail": "Magic number 3 — consider naming it as a constant",
+      "snippet": "assert len(result) == 3"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 629,
+      "detail": "Magic number 0.60 — consider naming it as a constant",
+      "snippet": "checker.step(0.60, 5)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 629,
+      "detail": "Magic number 5 — consider naming it as a constant",
+      "snippet": "checker.step(0.60, 5)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 630,
+      "detail": "Magic number 0.601 — consider naming it as a constant",
+      "snippet": "checker.step(0.601, 5)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 630,
+      "detail": "Magic number 5 — consider naming it as a constant",
+      "snippet": "checker.step(0.601, 5)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 631,
+      "detail": "Magic number 0.6015 — consider naming it as a constant",
+      "snippet": "r = checker.step(0.6015, 5)  # delta over window ≈ 0.0015 < 0.01"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 631,
+      "detail": "Magic number 5 — consider naming it as a constant",
+      "snippet": "r = checker.step(0.6015, 5)  # delta over window ≈ 0.0015 < 0.01"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 639,
+      "detail": "Magic number 0.50 — consider naming it as a constant",
+      "snippet": "r1 = checker.step(0.50, 10)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 639,
+      "detail": "Magic number 10 — consider naming it as a constant",
+      "snippet": "r1 = checker.step(0.50, 10)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 640,
+      "detail": "Magic number 0.60 — consider naming it as a constant",
+      "snippet": "r2 = checker.step(0.60, 8)   # +0.10 > 0.01 → not stalled"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 640,
+      "detail": "Magic number 8 — consider naming it as a constant",
+      "snippet": "r2 = checker.step(0.60, 8)   # +0.10 > 0.01 → not stalled"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 648,
+      "detail": "Magic number 0.5 — consider naming it as a constant",
+      "snippet": "checker.step(0.5, 3)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 648,
+      "detail": "Magic number 3 — consider naming it as a constant",
+      "snippet": "checker.step(0.5, 3)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 649,
+      "detail": "Magic number 0.6 — consider naming it as a constant",
+      "snippet": "checker.step(0.6, 2)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 665,
+      "detail": "Magic number 5 — consider naming it as a constant",
+      "snippet": "for i in range(5):"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 675,
+      "detail": "Magic number 5 — consider naming it as a constant",
+      "snippet": "assert manifest.num_images == 5"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 677,
+      "detail": "Magic number 64 — consider naming it as a constant",
+      "snippet": "assert len(manifest.checksum) == 64   # sha256 hex"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 685,
+      "detail": "Magic number 10 — consider naming it as a constant",
+      "snippet": "for i in range(10):"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 689,
+      "detail": "Magic number 10 — consider naming it as a constant",
+      "snippet": "assert sum(manifest.split.values()) == 10"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 720,
+      "detail": "Magic number 25 — consider naming it as a constant",
+      "snippet": "assert abs(bbox[0] - 25) < 1   # x"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 721,
+      "detail": "Magic number 25 — consider naming it as a constant",
+      "snippet": "assert abs(bbox[1] - 25) < 1   # y"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 722,
+      "detail": "Magic number 50 — consider naming it as a constant",
+      "snippet": "assert abs(bbox[2] - 50) < 1   # w"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 723,
+      "detail": "Magic number 50 — consider naming it as a constant",
+      "snippet": "assert abs(bbox[3] - 50) < 1   # h"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 734,
+      "detail": "Magic number 3 — consider naming it as a constant",
+      "snippet": "for i in range(3):"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 738,
+      "detail": "Magic number 3 — consider naming it as a constant",
+      "snippet": "assert result[\"total_images\"] == 3"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 739,
+      "detail": "Magic number 64 — consider naming it as a constant",
+      "snippet": "assert len(result[\"checksum\"]) == 64"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 781,
+      "detail": "Magic number 60 — consider naming it as a constant",
+      "snippet": "print(\"\\n\" + \"=\"*60)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 783,
+      "detail": "Magic number 60 — consider naming it as a constant",
+      "snippet": "print(\"=\"*60 + \"\\n\")"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 850,
+      "detail": "Magic number 60 — consider naming it as a constant",
+      "snippet": "print(\"=\"*60)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 852,
+      "detail": "Magic number 60 — consider naming it as a constant",
+      "snippet": "print(\"=\"*60 + \"\\n\")"
+    }
+  ]
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/tests/test_integration.py",
+  "score": 100,
+  "band": "Slop",
+  "error": null,
+  "findings": [
+    {
+      "category": "S6",
+      "category_name": "Generic Naming",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 28,
+      "detail": "\"results\" used 7 times — consider a domain-specific name",
+      "snippet": ""
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 50,
+      "detail": "Magic number 42 — consider naming it as a constant",
+      "snippet": "rng = np.random.default_rng(42)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 53,
+      "detail": "Magic number 60 — consider naming it as a constant",
+      "snippet": "img = (rng.integers(60, 200, (480, 640, 3))).astype(np.uint8)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 53,
+      "detail": "Magic number 200 — consider naming it as a constant",
+      "snippet": "img = (rng.integers(60, 200, (480, 640, 3))).astype(np.uint8)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 56,
+      "detail": "Magic number 0.3 — consider naming it as a constant",
+      "snippet": "cx, cy = 0.3 + 0.4 * rng.random(), 0.3 + 0.4 * rng.random()"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 56,
+      "detail": "Magic number 0.4 — consider naming it as a constant",
+      "snippet": "cx, cy = 0.3 + 0.4 * rng.random(), 0.3 + 0.4 * rng.random()"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 56,
+      "detail": "Magic number 0.3 — consider naming it as a constant",
+      "snippet": "cx, cy = 0.3 + 0.4 * rng.random(), 0.3 + 0.4 * rng.random()"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 56,
+      "detail": "Magic number 0.4 — consider naming it as a constant",
+      "snippet": "cx, cy = 0.3 + 0.4 * rng.random(), 0.3 + 0.4 * rng.random()"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 57,
+      "detail": "Magic number 0.1 — consider naming it as a constant",
+      "snippet": "w, h   = 0.1 + 0.3 * rng.random(), 0.1 + 0.2 * rng.random()"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 57,
+      "detail": "Magic number 0.3 — consider naming it as a constant",
+      "snippet": "w, h   = 0.1 + 0.3 * rng.random(), 0.1 + 0.2 * rng.random()"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 57,
+      "detail": "Magic number 0.1 — consider naming it as a constant",
+      "snippet": "w, h   = 0.1 + 0.3 * rng.random(), 0.1 + 0.2 * rng.random()"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 57,
+      "detail": "Magic number 0.2 — consider naming it as a constant",
+      "snippet": "w, h   = 0.1 + 0.3 * rng.random(), 0.1 + 0.2 * rng.random()"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 58,
+      "detail": "Magic number 0.6 — consider naming it as a constant",
+      "snippet": "conf   = 0.6 + 0.35 * rng.random()"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 58,
+      "detail": "Magic number 0.35 — consider naming it as a constant",
+      "snippet": "conf   = 0.6 + 0.35 * rng.random()"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 62,
+      "detail": "Magic number 3 — consider naming it as a constant",
+      "snippet": "img = np.full((480, 640, 3), 3, dtype=np.uint8)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 66,
+      "detail": "Magic number 128 — consider naming it as a constant",
+      "snippet": "img = np.full((480, 640, 3), 128, dtype=np.uint8)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 80,
+      "detail": "Magic number 255 — consider naming it as a constant",
+      "snippet": "img = rng.integers(0, 255, (100, 100, 3), dtype=np.uint8)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 83,
+      "detail": "Magic number 255 — consider naming it as a constant",
+      "snippet": "img2 = rng.integers(0, 255, (100, 100, 3), dtype=np.uint8)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 96,
+      "detail": "Magic number 5 — consider naming it as a constant",
+      "snippet": "assert report.kept <= 5"
+    },
+    {
+      "category": "S6",
+      "category_name": "Generic Naming",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 119,
+      "detail": "\"result\" used 5 times — consider a domain-specific name",
+      "snippet": ""
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 121,
+      "detail": "Magic number 0.81 — consider naming it as a constant",
+      "snippet": "result = checker.step(s, uncertain_count=max(1, int((0.81 - s) * 20)))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 121,
+      "detail": "Magic number 20 — consider naming it as a constant",
+      "snippet": "result = checker.step(s, uncertain_count=max(1, int((0.81 - s) * 20)))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 126,
+      "detail": "Magic number 4 — consider naming it as a constant",
+      "snippet": "assert checker.iteration == 4"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 138,
+      "detail": "Magic number 10 — consider naming it as a constant",
+      "snippet": "assert manifest.num_images == 10"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 141,
+      "detail": "Magic number 10 — consider naming it as a constant",
+      "snippet": "assert sum(manifest.split.values()) == 10"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 156,
+      "detail": "Magic number 6 — consider naming it as a constant",
+      "snippet": "assert manifest.num_images == 6"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 158,
+      "detail": "Magic number 6 — consider naming it as a constant",
+      "snippet": "assert len(ann[\"images\"]) == 6"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 173,
+      "detail": "Magic number 4 — consider naming it as a constant",
+      "snippet": "for p in src_imgs[:4]:"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 176,
+      "detail": "Magic number 99 — consider naming it as a constant",
+      "snippet": "rng = np.random.default_rng(99)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 178,
+      "detail": "Magic number 255 — consider naming it as a constant",
+      "snippet": "rng.integers(0, 255, (100, 100, 3), dtype=np.uint8))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 183,
+      "detail": "Magic number 42 — consider naming it as a constant",
+      "snippet": "snap1 = create_snapshot(42, \"v1.0\", imgd1, lbld1, snpd)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 184,
+      "detail": "Magic number 42 — consider naming it as a constant",
+      "snippet": "snap2 = create_snapshot(42, \"v1.1\", imgd2, lbld2, snpd)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 190,
+      "detail": "Magic number 4 — consider naming it as a constant",
+      "snippet": "assert diff.unchanged == 4"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 208,
+      "detail": "Magic number 8 — consider naming it as a constant",
+      "snippet": "assert dedup[\"kept\"] >= 8"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 227,
+      "detail": "Magic number 60 — consider naming it as a constant",
+      "snippet": "print(\"\\n\" + \"=\" * 60)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 229,
+      "detail": "Magic number 60 — consider naming it as a constant",
+      "snippet": "print(\"=\" * 60 + \"\\n\")"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 243,
+      "detail": "Magic number 60 — consider naming it as a constant",
+      "snippet": "print(\"=\" * 60)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 245,
+      "detail": "Magic number 60 — consider naming it as a constant",
+      "snippet": "print(\"=\" * 60 + \"\\n\")"
+    }
+  ]
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/tools/annotate_adb.py",
+  "score": 20,
+  "band": "Clean",
+  "error": null,
+  "findings": []
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/tools/annotate_adb_ablation.py",
+  "score": 20,
+  "band": "Clean",
+  "error": null,
+  "findings": []
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/tools/annotate_yolo_only.py",
+  "score": 100,
+  "band": "Slop",
+  "error": null,
+  "findings": [
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 29,
+      "detail": "Magic number 16 — consider naming it as a constant",
+      "snippet": "for i in range(0, len(paths), 16):"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 30,
+      "detail": "Magic number 16 — consider naming it as a constant",
+      "snippet": "batch = paths[i:i + 16]"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 31,
+      "detail": "Magic number 16 — consider naming it as a constant",
+      "snippet": "batch_files = files[i:i + 16]"
+    }
+  ]
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/tools/benchmark.py",
+  "score": 100,
+  "band": "Slop",
+  "error": null,
+  "findings": [
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 40,
+      "detail": "Magic number 40 — consider naming it as a constant",
+      "snippet": "img = rng.integers(40, 220, (480, 640, 3), dtype=np.uint8)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 40,
+      "detail": "Magic number 220 — consider naming it as a constant",
+      "snippet": "img = rng.integers(40, 220, (480, 640, 3), dtype=np.uint8)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 43,
+      "detail": "Magic number 0.1 — consider naming it as a constant",
+      "snippet": "cx = rng.uniform(0.1, 0.9)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 43,
+      "detail": "Magic number 0.9 — consider naming it as a constant",
+      "snippet": "cx = rng.uniform(0.1, 0.9)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 44,
+      "detail": "Magic number 0.1 — consider naming it as a constant",
+      "snippet": "cy = rng.uniform(0.1, 0.9)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 44,
+      "detail": "Magic number 0.9 — consider naming it as a constant",
+      "snippet": "cy = rng.uniform(0.1, 0.9)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 45,
+      "detail": "Magic number 0.05 — consider naming it as a constant",
+      "snippet": "w  = rng.uniform(0.05, 0.40)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 45,
+      "detail": "Magic number 0.40 — consider naming it as a constant",
+      "snippet": "w  = rng.uniform(0.05, 0.40)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 46,
+      "detail": "Magic number 0.05 — consider naming it as a constant",
+      "snippet": "h  = rng.uniform(0.05, 0.30)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 46,
+      "detail": "Magic number 0.30 — consider naming it as a constant",
+      "snippet": "h  = rng.uniform(0.05, 0.30)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 47,
+      "detail": "Magic number 0.50 — consider naming it as a constant",
+      "snippet": "conf = rng.uniform(0.50, 1.00)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 48,
+      "detail": "Magic number 4 — consider naming it as a constant",
+      "snippet": "n_cls = rng.integers(1, 4)  # vary class id for class balance metric"
+    },
+    {
+      "category": "S6",
+      "category_name": "Generic Naming",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 58,
+      "detail": "\"result\" used 5 times — consider a domain-specific name",
+      "snippet": ""
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 66,
+      "detail": "Magic number 3 — consider naming it as a constant",
+      "snippet": "\"elapsed_s\": round(elapsed, 3),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 80,
+      "detail": "Magic number 3 — consider naming it as a constant",
+      "snippet": "\"elapsed_s\": round(elapsed, 3),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 96,
+      "detail": "Magic number 4 — consider naming it as a constant",
+      "snippet": "\"dqs_score\": round(score, 4),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 98,
+      "detail": "Magic number 4 — consider naming it as a constant",
+      "snippet": "\"annotation_quality\": round(feats.annotation_quality, 4),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 99,
+      "detail": "Magic number 4 — consider naming it as a constant",
+      "snippet": "\"sharpness\": round(feats.sharpness, 4),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 100,
+      "detail": "Magic number 4 — consider naming it as a constant",
+      "snippet": "\"clip_diversity\": round(feats.clip_diversity, 4),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 101,
+      "detail": "Magic number 4 — consider naming it as a constant",
+      "snippet": "\"lighting_diversity\": round(feats.lighting_diversity, 4),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 102,
+      "detail": "Magic number 4 — consider naming it as a constant",
+      "snippet": "\"pose_diversity\": round(feats.pose_diversity, 4),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 103,
+      "detail": "Magic number 4 — consider naming it as a constant",
+      "snippet": "\"class_balance\": round(feats.class_balance, 4),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 105,
+      "detail": "Magic number 3 — consider naming it as a constant",
+      "snippet": "\"elapsed_s\": round(elapsed, 3),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 124,
+      "detail": "Magic number 1024 — consider naming it as a constant",
+      "snippet": "\"zip_size_kb\": round(zip_size / 1024, 1),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 125,
+      "detail": "Magic number 3 — consider naming it as a constant",
+      "snippet": "\"elapsed_s\": round(elapsed, 3),"
+    },
+    {
+      "category": "S3",
+      "category_name": "God Function",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 132,
+      "detail": "\"main\" is 60 lines long (threshold: 50)",
+      "snippet": "def main():"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 140,
+      "detail": "Magic number 60 — consider naming it as a constant",
+      "snippet": "print(f\"\\n{'='*60}\")"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 142,
+      "detail": "Magic number 60 — consider naming it as a constant",
+      "snippet": "print(f\"{'='*60}\\n\")"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 180,
+      "detail": "Magic number 60 — consider naming it as a constant",
+      "snippet": "print(f\"\\n{'─'*60}\")"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 182,
+      "detail": "Magic number 60 — consider naming it as a constant",
+      "snippet": "print(f\"{'─'*60}\")"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 185,
+      "detail": "Magic number 60 — consider naming it as a constant",
+      "snippet": "print(f\"{'─'*60}\\n\")"
+    }
+  ]
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/tools/build_adb_al.py",
+  "score": 100,
+  "band": "Slop",
+  "error": null,
+  "findings": [
+    {
+      "category": "S3",
+      "category_name": "God Function",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 27,
+      "detail": "\"main\" is 68 lines long (threshold: 50)",
+      "snippet": "def main():"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 42,
+      "detail": "Magic number 16 — consider naming it as a constant",
+      "snippet": "for i in range(0, len(paths), 16):"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 43,
+      "detail": "Magic number 16 — consider naming it as a constant",
+      "snippet": "batch = paths[i:i + 16]"
+    }
+  ]
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/tools/build_motorcycle_dataset.py",
+  "score": 57,
+  "band": "Sloppy",
+  "error": null,
+  "findings": [
+    {
+      "category": "S3",
+      "category_name": "God Function",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 41,
+      "detail": "\"main\" is 78 lines long (threshold: 50)",
+      "snippet": "def main():"
+    }
+  ]
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/tools/collect_dqs_data.py",
+  "score": 100,
+  "band": "Slop",
+  "error": null,
+  "findings": [
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 110,
+      "detail": "Magic number 255 — consider naming it as a constant",
+      "snippet": "return np.clip(img.astype(np.int16) + noise, 0, 255).astype(np.uint8)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 114,
+      "detail": "Magic number 255 — consider naming it as a constant",
+      "snippet": "return np.clip(img.astype(np.float32) * factor, 0, 255).astype(np.uint8)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 137,
+      "detail": "Magic number 180 — consider naming it as a constant",
+      "snippet": "hsv[..., 0] = (hsv[..., 0] + shift_deg // 2) % 180"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 179,
+      "detail": "Magic number 5 — consider naming it as a constant",
+      "snippet": "if len(parts) == 5:"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 183,
+      "detail": "Magic number 0.01 — consider naming it as a constant",
+      "snippet": "cx = max(0.01, min(0.99, cx))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 183,
+      "detail": "Magic number 0.99 — consider naming it as a constant",
+      "snippet": "cx = max(0.01, min(0.99, cx))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 184,
+      "detail": "Magic number 0.01 — consider naming it as a constant",
+      "snippet": "cy = max(0.01, min(0.99, cy))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 184,
+      "detail": "Magic number 0.99 — consider naming it as a constant",
+      "snippet": "cy = max(0.01, min(0.99, cy))"
+    },
+    {
+      "category": "S3",
+      "category_name": "God Function",
+      "severity": "HIGH",
+      "layer": "static",
+      "line": 191,
+      "detail": "\"build_variants\" is 348 lines long (threshold: 100)",
+      "snippet": "def build_variants("
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 239,
+      "detail": "Magic number 10 — consider naming it as a constant",
+      "snippet": "k = max(10, int(n * frac))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 250,
+      "detail": "Magic number 10 — consider naming it as a constant",
+      "snippet": "k = max(10, int(n * 0.7))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 250,
+      "detail": "Magic number 0.7 — consider naming it as a constant",
+      "snippet": "k = max(10, int(n * 0.7))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 254,
+      "detail": "Magic number 9 — consider naming it as a constant",
+      "snippet": "f\"v{i+9:02d}_noise_s{sigma}\","
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 263,
+      "detail": "Magic number 10 — consider naming it as a constant",
+      "snippet": "k = max(10, int(n * 0.6))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 263,
+      "detail": "Magic number 0.6 — consider naming it as a constant",
+      "snippet": "k = max(10, int(n * 0.6))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 267,
+      "detail": "Magic number 15 — consider naming it as a constant",
+      "snippet": "f\"v{i+15:02d}_dark_{int(factor*100)}\","
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 276,
+      "detail": "Magic number 10 — consider naming it as a constant",
+      "snippet": "k = max(10, int(n * 0.7))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 276,
+      "detail": "Magic number 0.7 — consider naming it as a constant",
+      "snippet": "k = max(10, int(n * 0.7))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 280,
+      "detail": "Magic number 20 — consider naming it as a constant",
+      "snippet": "f\"v{i+20:02d}_blur_k{ksize}\","
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 289,
+      "detail": "Magic number 20 — consider naming it as a constant",
+      "snippet": "(\"noise+dark\",   lambda img: _adjust_brightness(_add_gaussian_noise(img, 20), 0.6)),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 289,
+      "detail": "Magic number 0.6 — consider naming it as a constant",
+      "snippet": "(\"noise+dark\",   lambda img: _adjust_brightness(_add_gaussian_noise(img, 20), 0.6)),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 290,
+      "detail": "Magic number 15 — consider naming it as a constant",
+      "snippet": "(\"noise+blur\",   lambda img: cv2.GaussianBlur(_add_gaussian_noise(img, 15), (7, 7), 0)),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 291,
+      "detail": "Magic number 0.5 — consider naming it as a constant",
+      "snippet": "(\"dark+blur\",    lambda img: cv2.GaussianBlur(_adjust_brightness(img, 0.5), (11, 11), 0)),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 292,
+      "detail": "Magic number 30 — consider naming it as a constant",
+      "snippet": "(\"heavy_degrade\",lambda img: cv2.GaussianBlur(_adjust_brightness(_add_gaussian_noise(img, 30), 0.4), (15, 15), 0)),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 292,
+      "detail": "Magic number 0.4 — consider naming it as a constant",
+      "snippet": "(\"heavy_degrade\",lambda img: cv2.GaussianBlur(_adjust_brightness(_add_gaussian_noise(img, 30), 0.4), (15, 15), 0)),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 296,
+      "detail": "Magic number 10 — consider naming it as a constant",
+      "snippet": "k = 15 if dtype == \"small_clean\" else max(10, int(n * 0.5))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 296,
+      "detail": "Magic number 0.5 — consider naming it as a constant",
+      "snippet": "k = 15 if dtype == \"small_clean\" else max(10, int(n * 0.5))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 299,
+      "detail": "Magic number 25 — consider naming it as a constant",
+      "snippet": "f\"v{i+25:02d}_{dtype.replace('+', '_')}\","
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 308,
+      "detail": "Magic number 30 — consider naming it as a constant",
+      "snippet": "vid = f\"v{i+30:02d}_lbl_miss_{int(miss_frac*100)}\""
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 313,
+      "detail": "Magic number 10 — consider naming it as a constant",
+      "snippet": "sel = rng.sample(list(range(n)), max(10, int(n * 0.7)))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 313,
+      "detail": "Magic number 0.7 — consider naming it as a constant",
+      "snippet": "sel = rng.sample(list(range(n)), max(10, int(n * 0.7)))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 325,
+      "detail": "Magic number 36 — consider naming it as a constant",
+      "snippet": "vid = f\"v{i+36:02d}_lbl_noise_{int(shift*100)}\""
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 330,
+      "detail": "Magic number 10 — consider naming it as a constant",
+      "snippet": "sel = rng.sample(list(range(n)), max(10, int(n * 0.7)))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 330,
+      "detail": "Magic number 0.7 — consider naming it as a constant",
+      "snippet": "sel = rng.sample(list(range(n)), max(10, int(n * 0.7)))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 342,
+      "detail": "Magic number 10 — consider naming it as a constant",
+      "snippet": "k = max(10, int(n * 0.7))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 342,
+      "detail": "Magic number 0.7 — consider naming it as a constant",
+      "snippet": "k = max(10, int(n * 0.7))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 346,
+      "detail": "Magic number 39 — consider naming it as a constant",
+      "snippet": "f\"v{i+39:02d}_blur2_k{ksize}\","
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 355,
+      "detail": "Magic number 10 — consider naming it as a constant",
+      "snippet": "k = max(10, int(n * 0.7))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 355,
+      "detail": "Magic number 0.7 — consider naming it as a constant",
+      "snippet": "k = max(10, int(n * 0.7))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 359,
+      "detail": "Magic number 44 — consider naming it as a constant",
+      "snippet": "f\"v{i+44:02d}_noise2_s{sigma}\","
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 368,
+      "detail": "Magic number 10 — consider naming it as a constant",
+      "snippet": "k = max(10, int(n * 0.6))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 368,
+      "detail": "Magic number 0.6 — consider naming it as a constant",
+      "snippet": "k = max(10, int(n * 0.6))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 372,
+      "detail": "Magic number 52 — consider naming it as a constant",
+      "snippet": "f\"v{i+52:02d}_bright2_{int(factor*100)}\","
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 381,
+      "detail": "Magic number 59 — consider naming it as a constant",
+      "snippet": "vid = f\"v{i+59:02d}_lbl_miss2_{int(miss_frac*100)}\""
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 386,
+      "detail": "Magic number 10 — consider naming it as a constant",
+      "snippet": "sel = rng.sample(list(range(n)), max(10, int(n * 0.7)))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 386,
+      "detail": "Magic number 0.7 — consider naming it as a constant",
+      "snippet": "sel = rng.sample(list(range(n)), max(10, int(n * 0.7)))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 398,
+      "detail": "Magic number 10 — consider naming it as a constant",
+      "snippet": "k = max(10, int(n * 0.7))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 398,
+      "detail": "Magic number 0.7 — consider naming it as a constant",
+      "snippet": "k = max(10, int(n * 0.7))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 402,
+      "detail": "Magic number 66 — consider naming it as a constant",
+      "snippet": "f\"v{i+66:02d}_blur3_k{ksize}\","
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 411,
+      "detail": "Magic number 10 — consider naming it as a constant",
+      "snippet": "k = max(10, int(n * 0.6))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 411,
+      "detail": "Magic number 0.6 — consider naming it as a constant",
+      "snippet": "k = max(10, int(n * 0.6))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 415,
+      "detail": "Magic number 81 — consider naming it as a constant",
+      "snippet": "f\"v{i+81:02d}_bright3_{int(factor*100)}\","
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 424,
+      "detail": "Magic number 0.7 — consider naming it as a constant",
+      "snippet": "(\"blur_dark_mild\",   lambda img: cv2.GaussianBlur(_adjust_brightness(img, 0.7), (7,7), 0)),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 425,
+      "detail": "Magic number 0.5 — consider naming it as a constant",
+      "snippet": "(\"blur_dark_mod\",    lambda img: cv2.GaussianBlur(_adjust_brightness(img, 0.5), (15,15), 0)),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 426,
+      "detail": "Magic number 0.3 — consider naming it as a constant",
+      "snippet": "(\"blur_dark_heavy\",  lambda img: cv2.GaussianBlur(_adjust_brightness(img, 0.3), (25,25), 0)),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 427,
+      "detail": "Magic number 10 — consider naming it as a constant",
+      "snippet": "(\"noise_dark_mild\",  lambda img: _adjust_brightness(_add_gaussian_noise(img, 10), 0.7)),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 427,
+      "detail": "Magic number 0.7 — consider naming it as a constant",
+      "snippet": "(\"noise_dark_mild\",  lambda img: _adjust_brightness(_add_gaussian_noise(img, 10), 0.7)),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 428,
+      "detail": "Magic number 25 — consider naming it as a constant",
+      "snippet": "(\"noise_dark_mod\",   lambda img: _adjust_brightness(_add_gaussian_noise(img, 25), 0.5)),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 428,
+      "detail": "Magic number 0.5 — consider naming it as a constant",
+      "snippet": "(\"noise_dark_mod\",   lambda img: _adjust_brightness(_add_gaussian_noise(img, 25), 0.5)),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 429,
+      "detail": "Magic number 8 — consider naming it as a constant",
+      "snippet": "(\"noise_blur_mild\",  lambda img: cv2.GaussianBlur(_add_gaussian_noise(img, 8), (5,5), 0)),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 430,
+      "detail": "Magic number 20 — consider naming it as a constant",
+      "snippet": "(\"noise_blur_mod\",   lambda img: cv2.GaussianBlur(_add_gaussian_noise(img, 20), (11,11), 0)),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 431,
+      "detail": "Magic number 40 — consider naming it as a constant",
+      "snippet": "(\"noise_blur_heavy\", lambda img: cv2.GaussianBlur(_add_gaussian_noise(img, 40), (21,21), 0)),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 434,
+      "detail": "Magic number 10 — consider naming it as a constant",
+      "snippet": "k = max(10, int(n * 0.6))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 434,
+      "detail": "Magic number 0.6 — consider naming it as a constant",
+      "snippet": "k = max(10, int(n * 0.6))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 437,
+      "detail": "Magic number 89 — consider naming it as a constant",
+      "snippet": "f\"v{i+89:02d}_{cname}\","
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 446,
+      "detail": "Magic number 10 — consider naming it as a constant",
+      "snippet": "k = max(10, int(n * 0.7))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 446,
+      "detail": "Magic number 0.7 — consider naming it as a constant",
+      "snippet": "k = max(10, int(n * 0.7))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 450,
+      "detail": "Magic number 96 — consider naming it as a constant",
+      "snippet": "f\"v{i+96:02d}_lowres_{int(scale*100)}\","
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 459,
+      "detail": "Magic number 10 — consider naming it as a constant",
+      "snippet": "k = max(10, int(n * 0.7))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 459,
+      "detail": "Magic number 0.7 — consider naming it as a constant",
+      "snippet": "k = max(10, int(n * 0.7))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 463,
+      "detail": "Magic number 104 — consider naming it as a constant",
+      "snippet": "f\"v{i+104:02d}_jpeg_q{quality}\","
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 475,
+      "detail": "Magic number 10 — consider naming it as a constant",
+      "snippet": "k = max(10, int(n * 0.7))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 475,
+      "detail": "Magic number 0.7 — consider naming it as a constant",
+      "snippet": "k = max(10, int(n * 0.7))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 478,
+      "detail": "Magic number 1000 — consider naming it as a constant",
+      "snippet": "cutout_rng = random.Random(1000 + i)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 480,
+      "detail": "Magic number 112 — consider naming it as a constant",
+      "snippet": "f\"v{i+112:02d}_cutout_{n_holes}x{int(hole_frac*100)}\","
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 489,
+      "detail": "Magic number 10 — consider naming it as a constant",
+      "snippet": "k = max(10, int(n * 0.6))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 489,
+      "detail": "Magic number 0.6 — consider naming it as a constant",
+      "snippet": "k = max(10, int(n * 0.6))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 493,
+      "detail": "Magic number 120 — consider naming it as a constant",
+      "snippet": "f\"v{i+120:02d}_hue_{shift_deg}\","
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 502,
+      "detail": "Magic number 0.3 — consider naming it as a constant",
+      "snippet": "(\"lowres_noise\",   lambda img: _add_gaussian_noise(_downscale_upscale(img, 0.3), 15)),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 502,
+      "detail": "Magic number 15 — consider naming it as a constant",
+      "snippet": "(\"lowres_noise\",   lambda img: _add_gaussian_noise(_downscale_upscale(img, 0.3), 15)),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 503,
+      "detail": "Magic number 0.25 — consider naming it as a constant",
+      "snippet": "(\"lowres_dark\",    lambda img: _adjust_brightness(_downscale_upscale(img, 0.25), 0.5)),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 503,
+      "detail": "Magic number 0.5 — consider naming it as a constant",
+      "snippet": "(\"lowres_dark\",    lambda img: _adjust_brightness(_downscale_upscale(img, 0.25), 0.5)),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 504,
+      "detail": "Magic number 15 — consider naming it as a constant",
+      "snippet": "(\"jpeg_blur\",      lambda img: cv2.GaussianBlur(_jpeg_compress(img, 15), (7, 7), 0)),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 505,
+      "detail": "Magic number 10 — consider naming it as a constant",
+      "snippet": "(\"jpeg_noise\",     lambda img: _add_gaussian_noise(_jpeg_compress(img, 10), 20)),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 505,
+      "detail": "Magic number 20 — consider naming it as a constant",
+      "snippet": "(\"jpeg_noise\",     lambda img: _add_gaussian_noise(_jpeg_compress(img, 10), 20)),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 506,
+      "detail": "Magic number 0.5 — consider naming it as a constant",
+      "snippet": "(\"cutout_dark\",    lambda img: _cutout(_adjust_brightness(img, 0.5), 3, 0.15, random.Random(2001))),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 506,
+      "detail": "Magic number 3 — consider naming it as a constant",
+      "snippet": "(\"cutout_dark\",    lambda img: _cutout(_adjust_brightness(img, 0.5), 3, 0.15, random.Random(2001))),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 506,
+      "detail": "Magic number 0.15 — consider naming it as a constant",
+      "snippet": "(\"cutout_dark\",    lambda img: _cutout(_adjust_brightness(img, 0.5), 3, 0.15, random.Random(2001))),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 506,
+      "detail": "Magic number 2001 — consider naming it as a constant",
+      "snippet": "(\"cutout_dark\",    lambda img: _cutout(_adjust_brightness(img, 0.5), 3, 0.15, random.Random(2001))),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 507,
+      "detail": "Magic number 3 — consider naming it as a constant",
+      "snippet": "(\"cutout_noise\",   lambda img: _add_gaussian_noise(_cutout(img, 3, 0.15, random.Random(2002)), 20)),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 507,
+      "detail": "Magic number 0.15 — consider naming it as a constant",
+      "snippet": "(\"cutout_noise\",   lambda img: _add_gaussian_noise(_cutout(img, 3, 0.15, random.Random(2002)), 20)),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 507,
+      "detail": "Magic number 2002 — consider naming it as a constant",
+      "snippet": "(\"cutout_noise\",   lambda img: _add_gaussian_noise(_cutout(img, 3, 0.15, random.Random(2002)), 20)),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 507,
+      "detail": "Magic number 20 — consider naming it as a constant",
+      "snippet": "(\"cutout_noise\",   lambda img: _add_gaussian_noise(_cutout(img, 3, 0.15, random.Random(2002)), 20)),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 508,
+      "detail": "Magic number 60 — consider naming it as a constant",
+      "snippet": "(\"hue_blur\",       lambda img: cv2.GaussianBlur(_hue_shift(img, 60), (7, 7), 0)),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 509,
+      "detail": "Magic number 90 — consider naming it as a constant",
+      "snippet": "(\"hue_jpeg\",       lambda img: _jpeg_compress(_hue_shift(img, 90), 20)),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 509,
+      "detail": "Magic number 20 — consider naming it as a constant",
+      "snippet": "(\"hue_jpeg\",       lambda img: _jpeg_compress(_hue_shift(img, 90), 20)),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 512,
+      "detail": "Magic number 10 — consider naming it as a constant",
+      "snippet": "k = max(10, int(n * 0.6))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 512,
+      "detail": "Magic number 0.6 — consider naming it as a constant",
+      "snippet": "k = max(10, int(n * 0.6))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 515,
+      "detail": "Magic number 128 — consider naming it as a constant",
+      "snippet": "f\"v{i+128:02d}_{cname}\","
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 524,
+      "detail": "Magic number 136 — consider naming it as a constant",
+      "snippet": "vid = f\"v{i+136:02d}_lbl_noise2_{int(shift*100)}\""
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 529,
+      "detail": "Magic number 10 — consider naming it as a constant",
+      "snippet": "sel = rng.sample(list(range(n)), max(10, int(n * 0.7)))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 529,
+      "detail": "Magic number 0.7 — consider naming it as a constant",
+      "snippet": "sel = rng.sample(list(range(n)), max(10, int(n * 0.7)))"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 549,
+      "detail": "Magic number 4 — consider naming it as a constant",
+      "snippet": "\"annotation_quality\": round(feats.annotation_quality, 4),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 550,
+      "detail": "Magic number 4 — consider naming it as a constant",
+      "snippet": "\"sharpness\":          round(feats.sharpness, 4),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 551,
+      "detail": "Magic number 4 — consider naming it as a constant",
+      "snippet": "\"clip_diversity\":     round(feats.clip_diversity, 4),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 552,
+      "detail": "Magic number 4 — consider naming it as a constant",
+      "snippet": "\"lighting_diversity\": round(feats.lighting_diversity, 4),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 553,
+      "detail": "Magic number 4 — consider naming it as a constant",
+      "snippet": "\"pose_diversity\":     round(feats.pose_diversity, 4),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 554,
+      "detail": "Magic number 4 — consider naming it as a constant",
+      "snippet": "\"class_balance\":      round(feats.class_balance, 4),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 574,
+      "detail": "Magic number 80 — consider naming it as a constant",
+      "snippet": "names: {list(range(80))}"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 606,
+      "detail": "Magic number 80 — consider naming it as a constant",
+      "snippet": "\", \".join(f\"'class{i}'\" for i in range(80)) + \"]\\n\")"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 637,
+      "detail": "Magic number 30 — consider naming it as a constant",
+      "snippet": "imgs = list(Path(img_dir).glob(\"*.jpg\"))[:30]   # sample up to 30 for speed"
+    },
+    {
+      "category": "S9",
+      "category_name": "False Safety Net",
+      "severity": "HIGH",
+      "layer": "static",
+      "line": 648,
+      "detail": "Exception handler silently swallows errors (no re-raise)",
+      "snippet": "except Exception:"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 652,
+      "detail": "Magic number 4 — consider naming it as a constant",
+      "snippet": "return round(proxy, 4), 0.0"
+    },
+    {
+      "category": "S3",
+      "category_name": "God Function",
+      "severity": "HIGH",
+      "layer": "static",
+      "line": 657,
+      "detail": "\"main\" is 101 lines long (threshold: 100)",
+      "snippet": "def main():"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 670,
+      "detail": "Magic number 65 — consider naming it as a constant",
+      "snippet": "print(f\"\\n{'='*65}\")"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 673,
+      "detail": "Magic number 65 — consider naming it as a constant",
+      "snippet": "print(f\"{'='*65}\\n\")"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 692,
+      "detail": "Magic number 42 — consider naming it as a constant",
+      "snippet": "rng = random.Random(42)"
+    },
+    {
+      "category": "S6",
+      "category_name": "Generic Naming",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 698,
+      "detail": "\"records\" used 4 times — consider a domain-specific name",
+      "snippet": ""
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 752,
+      "detail": "Magic number 65 — consider naming it as a constant",
+      "snippet": "print(f\"\\n{'─'*65}\")"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 757,
+      "detail": "Magic number 65 — consider naming it as a constant",
+      "snippet": "print(f\"{'─'*65}\\n\")"
+    }
+  ]
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/tools/compare_open_vocab.py",
+  "score": 60,
+  "band": "Sloppy",
+  "error": null,
+  "findings": []
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/tools/dqs_cross_domain_check.py",
+  "score": 100,
+  "band": "Slop",
+  "error": null,
+  "findings": []
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/tools/explain_dqs.py",
+  "score": 100,
+  "band": "Slop",
+  "error": null,
+  "findings": [
+    {
+      "category": "S3",
+      "category_name": "God Function",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 42,
+      "detail": "\"main\" is 52 lines long (threshold: 50)",
+      "snippet": "def main():"
+    },
+    {
+      "category": "S6",
+      "category_name": "Generic Naming",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 61,
+      "detail": "\"val\" used 5 times — consider a domain-specific name",
+      "snippet": ""
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 62,
+      "detail": "Magic number 200 — consider naming it as a constant",
+      "snippet": "bar = \"█\" * int(val * 200)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 82,
+      "detail": "Magic number 0.0005 — consider naming it as a constant",
+      "snippet": "ax.text(bar.get_width() + 0.0005, bar.get_y() + bar.get_height() / 2,"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 85,
+      "detail": "Magic number 1.25 — consider naming it as a constant",
+      "snippet": "ax.set_xlim(0, max(values) * 1.25)"
+    },
+    {
+      "category": "S9",
+      "category_name": "False Safety Net",
+      "severity": "HIGH",
+      "layer": "static",
+      "line": 93,
+      "detail": "Exception handler silently swallows errors (no re-raise)",
+      "snippet": "except ImportError:"
+    }
+  ]
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/tools/split_motorcycle_dataset.py",
+  "score": 100,
+  "band": "Slop",
+  "error": null,
+  "findings": [
+    {
+      "category": "S3",
+      "category_name": "God Function",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 26,
+      "detail": "\"main\" is 54 lines long (threshold: 50)",
+      "snippet": "def main():"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 39,
+      "detail": "Magic number 0.8 — consider naming it as a constant",
+      "snippet": "n_train = int(n * 0.8)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 40,
+      "detail": "Magic number 0.1 — consider naming it as a constant",
+      "snippet": "n_val = int(n * 0.1)"
+    }
+  ]
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/tools/train_eval_motorcycle.py",
+  "score": 70,
+  "band": "Very Sloppy",
+  "error": null,
+  "findings": [
+    {
+      "category": "S3",
+      "category_name": "God Function",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 24,
+      "detail": "\"main\" is 61 lines long (threshold: 50)",
+      "snippet": "def main():"
+    }
+  ]
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/tools/train_neural_dqs.py",
+  "score": 100,
+  "band": "Slop",
+  "error": null,
+  "findings": [
+    {
+      "category": "S3",
+      "category_name": "God Function",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 52,
+      "detail": "\"main\" is 75 lines long (threshold: 50)",
+      "snippet": "def main():"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 59,
+      "detail": "Magic number 60 — consider naming it as a constant",
+      "snippet": "print(f\"\\n{'='*60}\")"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 61,
+      "detail": "Magic number 60 — consider naming it as a constant",
+      "snippet": "print(f\"{'='*60}\\n\")"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 77,
+      "detail": "Magic number 60 — consider naming it as a constant",
+      "snippet": "print(f\"\\n{'─'*60}\")"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 79,
+      "detail": "Magic number 60 — consider naming it as a constant",
+      "snippet": "print(f\"{'─'*60}\")"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 82,
+      "detail": "Magic number 60 — consider naming it as a constant",
+      "snippet": "print(f\"{'─'*60}\\n\")"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 88,
+      "detail": "Magic number 20 — consider naming it as a constant",
+      "snippet": "bar = \"█\" * int(abs(r) * 20)"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 94,
+      "detail": "Magic number 4 — consider naming it as a constant",
+      "snippet": "\"mAP50_range\": [round(float(y.min()), 4), round(float(y.max()), 4)],"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 94,
+      "detail": "Magic number 4 — consider naming it as a constant",
+      "snippet": "\"mAP50_range\": [round(float(y.min()), 4), round(float(y.max()), 4)],"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 97,
+      "detail": "Magic number 4 — consider naming it as a constant",
+      "snippet": "col: round(float(np.corrcoef(X[:, i], y)[0, 1]), 4)"
+    },
+    {
+      "category": "S9",
+      "category_name": "False Safety Net",
+      "severity": "HIGH",
+      "layer": "static",
+      "line": 126,
+      "detail": "Exception handler silently swallows errors (no re-raise)",
+      "snippet": "except ImportError:"
+    }
+  ]
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/workers/__init__.py",
+  "score": 0,
+  "band": "Clean",
+  "error": null,
+  "findings": []
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/workers/active_learning/__init__.py",
+  "score": 0,
+  "band": "Clean",
+  "error": null,
+  "findings": []
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/workers/active_learning/al_loop.py",
+  "score": 90,
+  "band": "Slop",
+  "error": null,
+  "findings": [
+    {
+      "category": "S3",
+      "category_name": "God Function",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 113,
+      "detail": "\"run_active_learning_loop\" is 75 lines long (threshold: 50)",
+      "snippet": "def run_active_learning_loop("
+    }
+  ]
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/workers/active_learning/convergence_checker.py",
+  "score": 100,
+  "band": "Slop",
+  "error": null,
+  "findings": [
+    {
+      "category": "S3",
+      "category_name": "God Function",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 88,
+      "detail": "\"step\" is 60 lines long (threshold: 50)",
+      "snippet": "def step(self, dqs_score: float, uncertain_count: int) -> ConvergenceResult:"
+    },
+    {
+      "category": "S6",
+      "category_name": "Generic Naming",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 102,
+      "detail": "\"record\" used 11 times — consider a domain-specific name",
+      "snippet": ""
+    },
+    {
+      "category": "S6",
+      "category_name": "Generic Naming",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 110,
+      "detail": "\"info\" used 5 times — consider a domain-specific name",
+      "snippet": ""
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 167,
+      "detail": "Magic number 4 — consider naming it as a constant",
+      "snippet": "\"dqs_score\": round(r.dqs_score, 4),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 168,
+      "detail": "Magic number 4 — consider naming it as a constant",
+      "snippet": "\"delta_dqs\": round(r.delta_dqs, 4),"
+    }
+  ]
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/workers/active_learning/uncertainty_sampler.py",
+  "score": 100,
+  "band": "Slop",
+  "error": null,
+  "findings": [
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 39,
+      "detail": "Magic number 5 — consider naming it as a constant",
+      "snippet": "if len(parts) < 5:"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 48,
+      "detail": "Magic number 5 — consider naming it as a constant",
+      "snippet": "\"conf\": float(parts[5]) if len(parts) > 5 else 1.0,"
+    },
+    {
+      "category": "S9",
+      "category_name": "False Safety Net",
+      "severity": "HIGH",
+      "layer": "static",
+      "line": 51,
+      "detail": "Exception handler silently swallows errors (no re-raise)",
+      "snippet": "except (OSError, ValueError) as e:"
+    },
+    {
+      "category": "S3",
+      "category_name": "God Function",
+      "severity": "HIGH",
+      "layer": "static",
+      "line": 69,
+      "detail": "\"sample_uncertain_images\" is 100 lines long (threshold: 100)",
+      "snippet": "def sample_uncertain_images("
+    }
+  ]
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/workers/annotator/__init__.py",
+  "score": 0,
+  "band": "Clean",
+  "error": null,
+  "findings": []
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/workers/annotator/coco_classes.py",
+  "score": 0,
+  "band": "Clean",
+  "error": null,
+  "findings": []
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/workers/annotator/llm_verifier.py",
+  "score": 83,
+  "band": "Slop",
+  "error": null,
+  "findings": [
+    {
+      "category": "S3",
+      "category_name": "God Function",
+      "severity": "HIGH",
+      "layer": "static",
+      "line": 212,
+      "detail": "\"verify_with_llm\" is 102 lines long (threshold: 100)",
+      "snippet": "def verify_with_llm("
+    }
+  ]
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/workers/annotator/open_vocab_detector.py",
+  "score": 100,
+  "band": "Slop",
+  "error": null,
+  "findings": [
+    {
+      "category": "S3",
+      "category_name": "God Function",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 8,
+      "detail": "\"run_yolo_world_batch\" is 57 lines long (threshold: 50)",
+      "snippet": "def run_yolo_world_batch("
+    },
+    {
+      "category": "S6",
+      "category_name": "Generic Naming",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 36,
+      "detail": "\"results\" used 4 times — consider a domain-specific name",
+      "snippet": ""
+    }
+  ]
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/workers/annotator/sam2_refiner.py",
+  "score": 100,
+  "band": "Slop",
+  "error": null,
+  "findings": [
+    {
+      "category": "S3",
+      "category_name": "God Function",
+      "severity": "HIGH",
+      "layer": "static",
+      "line": 78,
+      "detail": "\"refine_with_sam2\" is 117 lines long (threshold: 100)",
+      "snippet": "def refine_with_sam2("
+    }
+  ]
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/workers/annotator/tasks.py",
+  "score": 100,
+  "band": "Slop",
+  "error": null,
+  "findings": [
+    {
+      "category": "S3",
+      "category_name": "God Function",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 14,
+      "detail": "\"run_yolo_annotation\" is 58 lines long (threshold: 50)",
+      "snippet": "def run_yolo_annotation("
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 47,
+      "detail": "Magic number 0.9 — consider naming it as a constant",
+      "snippet": "progress = min(0.9, (i + len(batch)) / total)"
+    }
+  ]
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/workers/annotator/three_stage_pipeline.py",
+  "score": 100,
+  "band": "Slop",
+  "error": null,
+  "findings": [
+    {
+      "category": "S3",
+      "category_name": "God Function",
+      "severity": "HIGH",
+      "layer": "static",
+      "line": 65,
+      "detail": "\"run_three_stage_pipeline\" is 139 lines long (threshold: 100)",
+      "snippet": "def run_three_stage_pipeline("
+    },
+    {
+      "category": "S3",
+      "category_name": "God Function",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 65,
+      "detail": "\"run_three_stage_pipeline\" has 16 parameters (threshold: 7)",
+      "snippet": "def run_three_stage_pipeline("
+    },
+    {
+      "category": "S6",
+      "category_name": "Generic Naming",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 108,
+      "detail": "\"info\" used 11 times — consider a domain-specific name",
+      "snippet": ""
+    }
+  ]
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/workers/annotator/yolo_annotator.py",
+  "score": 100,
+  "band": "Slop",
+  "error": null,
+  "findings": [
+    {
+      "category": "S3",
+      "category_name": "God Function",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 28,
+      "detail": "\"run_yolo_batch\" is 51 lines long (threshold: 50)",
+      "snippet": "def run_yolo_batch("
+    },
+    {
+      "category": "S6",
+      "category_name": "Generic Naming",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 47,
+      "detail": "\"results\" used 4 times — consider a domain-specific name",
+      "snippet": ""
+    },
+    {
+      "category": "S6",
+      "category_name": "Generic Naming",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 94,
+      "detail": "\"result\" used 5 times — consider a domain-specific name",
+      "snippet": ""
+    }
+  ]
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/workers/celery_app.py",
+  "score": 20,
+  "band": "Clean",
+  "error": null,
+  "findings": []
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/workers/cleaner/__init__.py",
+  "score": 0,
+  "band": "Clean",
+  "error": null,
+  "findings": []
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/workers/cleaner/cleaning_pipeline.py",
+  "score": 100,
+  "band": "Slop",
+  "error": null,
+  "findings": [
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 77,
+      "detail": "Magic number 250 — consider naming it as a constant",
+      "snippet": "overexposed_ratio = float((hsv[:, :, 2] > 250).mean())"
+    },
+    {
+      "category": "S3",
+      "category_name": "God Function",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 105,
+      "detail": "\"clean_dataset\" is 59 lines long (threshold: 50)",
+      "snippet": "def clean_dataset("
+    },
+    {
+      "category": "S3",
+      "category_name": "God Function",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 105,
+      "detail": "\"clean_dataset\" has 7 parameters (threshold: 7)",
+      "snippet": "def clean_dataset("
+    }
+  ]
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/workers/cleaner/tasks.py",
+  "score": 40,
+  "band": "Slightly Sloppy",
+  "error": null,
+  "findings": []
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/workers/collector/__init__.py",
+  "score": 0,
+  "band": "Clean",
+  "error": null,
+  "findings": []
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/workers/collector/deduplicator.py",
+  "score": 90,
+  "band": "Slop",
+  "error": null,
+  "findings": [
+    {
+      "category": "S3",
+      "category_name": "God Function",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 14,
+      "detail": "\"remove_duplicates\" is 50 lines long (threshold: 50)",
+      "snippet": "def remove_duplicates("
+    }
+  ]
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/workers/collector/image_searcher.py",
+  "score": 100,
+  "band": "Slop",
+  "error": null,
+  "findings": [
+    {
+      "category": "S6",
+      "category_name": "Generic Naming",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 35,
+      "detail": "\"items\" used 4 times — consider a domain-specific name",
+      "snippet": ""
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 41,
+      "detail": "Magic number 3 — consider naming it as a constant",
+      "snippet": "expanded = [f\"{kw} {region}\" for kw in expanded[:3]] + expanded"
+    },
+    {
+      "category": "S6",
+      "category_name": "Generic Naming",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 45,
+      "detail": "\"result\" used 5 times — consider a domain-specific name",
+      "snippet": ""
+    },
+    {
+      "category": "S6",
+      "category_name": "Generic Naming",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 65,
+      "detail": "\"results\" used 6 times — consider a domain-specific name",
+      "snippet": ""
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 99,
+      "detail": "Magic number 10 — consider naming it as a constant",
+      "snippet": "\"num\": min(10, count - len(urls)),"
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 109,
+      "detail": "Magic number 10 — consider naming it as a constant",
+      "snippet": "start += 10"
+    }
+  ]
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/workers/collector/tasks.py",
+  "score": 100,
+  "band": "Slop",
+  "error": null,
+  "findings": [
+    {
+      "category": "S6",
+      "category_name": "Generic Naming",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 32,
+      "detail": "\"results\" used 6 times — consider a domain-specific name",
+      "snippet": ""
+    }
+  ]
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/workers/collector/youtube_downloader.py",
+  "score": 100,
+  "band": "Slop",
+  "error": null,
+  "findings": [
+    {
+      "category": "S3",
+      "category_name": "God Function",
+      "severity": "HIGH",
+      "layer": "static",
+      "line": 53,
+      "detail": "\"download_videos\" is 108 lines long (threshold: 100)",
+      "snippet": "def download_videos("
+    },
+    {
+      "category": "S6",
+      "category_name": "Generic Naming",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 71,
+      "detail": "\"results\" used 10 times — consider a domain-specific name",
+      "snippet": ""
+    },
+    {
+      "category": "S8",
+      "category_name": "Magic Number",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 79,
+      "detail": "Magic number 3 — consider naming it as a constant",
+      "snippet": "search_query = f\"ytsearch{per_keyword * 3}:{keyword}\"  # fetch more to filter"
+    },
+    {
+      "category": "S6",
+      "category_name": "Generic Naming",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 102,
+      "detail": "\"info\" used 17 times — consider a domain-specific name",
+      "snippet": ""
+    },
+    {
+      "category": "S9",
+      "category_name": "False Safety Net",
+      "severity": "HIGH",
+      "layer": "static",
+      "line": 153,
+      "detail": "Exception handler silently swallows errors (no re-raise)",
+      "snippet": "except Exception as e:"
+    }
+  ]
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/workers/extractor/__init__.py",
+  "score": 0,
+  "band": "Clean",
+  "error": null,
+  "findings": []
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/workers/extractor/frame_extractor.py",
+  "score": 88,
+  "band": "Slop",
+  "error": null,
+  "findings": [
+    {
+      "category": "S3",
+      "category_name": "God Function",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 63,
+      "detail": "\"extract_adaptive\" is 62 lines long (threshold: 50)",
+      "snippet": "def extract_adaptive("
+    }
+  ]
+}
+{
+  "file": "/home/wei/claude-workspace/projects/auto-dataset-builder/workers/extractor/tasks.py",
+  "score": 90,
+  "band": "Slop",
+  "error": null,
+  "findings": [
+    {
+      "category": "S6",
+      "category_name": "Generic Naming",
+      "severity": "MEDIUM",
+      "layer": "static",
+      "line": 28,
+      "detail": "\"result\" used 6 times — consider a domain-specific name",
+      "snippet": ""
+    }
+  ]
+}

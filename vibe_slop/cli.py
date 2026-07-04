@@ -1,5 +1,4 @@
 """CLI entry point: vibe-slop check <file|dir> [options]"""
-import sys
 from pathlib import Path
 from typing import Optional
 
