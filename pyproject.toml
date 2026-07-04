@@ -1,0 +1,28 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "vibe-slop"
+version = "0.1.0"
+description = "Detect AI-generated code anti-patterns (vibe slop)"
+requires-python = ">=3.10"
+dependencies = [
+    "typer>=0.12",
+    "rich>=13",
+    "tree-sitter>=0.23",
+    "tree-sitter-python>=0.23",
+    "anthropic>=0.30",
+]
+
+[project.scripts]
+vibe-slop = "vibe_slop.cli:app"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8",
+    "pytest-cov",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
