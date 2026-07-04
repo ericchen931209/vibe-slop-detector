@@ -17,16 +17,36 @@ Score: 72/100  Band: Very Sloppy
 
 ## Installation
 
+**Recommended (installs as a standalone CLI tool):**
+
 ```bash
-pip install vibe-slop
+pipx install git+https://github.com/ericchen931209/vibe-slop-detector.git
 ```
 
-Or from source:
+If you don't have `pipx`:
 
 ```bash
-git clone https://github.com/<your-username>/vibe-slop-detector
+# macOS
+brew install pipx
+
+# Ubuntu / Debian
+sudo apt install pipx && pipx ensurepath
+```
+
+**Or in a virtual environment:**
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install git+https://github.com/ericchen931209/vibe-slop-detector.git
+```
+
+**Or from source (for development):**
+
+```bash
+git clone https://github.com/ericchen931209/vibe-slop-detector
 cd vibe-slop-detector
-pip install -e .
+pip install -e ".[dev]"
 ```
 
 ## Usage
