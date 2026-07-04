@@ -1,0 +1,79 @@
+{
+  "metadata": {
+    "timestamp": "20260704_211029",
+    "ai_n": 400,
+    "human_n": 400
+  },
+  "ai": {
+    "n": 400,
+    "mean": 59.75,
+    "median": 65.5,
+    "stdev": 41.41,
+    "min": 0,
+    "max": 100,
+    "pct25": 20,
+    "pct75": 100,
+    "band_distribution": {
+      "Clean": 113,
+      "Sloppy": 54,
+      "Slop": 187,
+      "Very Sloppy": 21,
+      "Slightly Sloppy": 25
+    },
+    "top_categories": {
+      "S8": 1399,
+      "S3": 319,
+      "S6": 304,
+      "S9": 169,
+      "S4": 169,
+      "S7": 133,
+      "S13": 1
+    }
+  },
+  "human": {
+    "n": 400,
+    "mean": 61.51,
+    "median": 74.0,
+    "stdev": 40.71,
+    "min": 0,
+    "max": 100,
+    "pct25": 20,
+    "pct75": 100,
+    "band_distribution": {
+      "Slop": 191,
+      "Very Sloppy": 31,
+      "Clean": 102,
+      "Sloppy": 51,
+      "Slightly Sloppy": 25
+    },
+    "top_categories": {
+      "S8": 1913,
+      "S7": 380,
+      "S4": 314,
+      "S6": 295,
+      "S3": 282,
+      "S9": 97,
+      "S13": 7,
+      "S2": 3
+    }
+  },
+  "accuracy": {
+    "threshold": 0,
+    "accuracy": 0.5,
+    "precision": 0.5,
+    "recall": 1.0,
+    "f1": 0.6667,
+    "confusion": {
+      "tp": 400,
+      "fp": 400,
+      "fn": 0,
+      "tn": 0
+    },
+    "auc": 0.4943,
+    "mannwhitney_u": 79087.0,
+    "p_value": 0.6150024228416728,
+    "p_value_str": "0.6150",
+    "effect_size_r": 0.4943,
+    "significant": false
+  }
+}

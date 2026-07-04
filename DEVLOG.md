@@ -120,7 +120,92 @@ LLM Judge（`--llm`）失敗時，保留 static 結果繼續輸出，只在 erro
 
 ### 待處理
 
-- [ ] 推到 GitHub（需要 `gh auth login`）
+- [x] 推到 GitHub
 - [ ] 實作 Copy-Paste Clone（S5）— 需要 token similarity 演算法
 - [ ] 實作 Defensive Over-checking（S12）— Static + LLM
 - [ ] 擴展語言支援：JavaScript / TypeScript
+
+---
+
+## 2026-07-04 — 自我偵測 & Bug 修復
+
+### Self-check 發現的問題
+
+把 vibe-slop 對自己執行，發現 3 個真實 bug：
+
+**Bug 1: Dead Import (S4) 大量誤判**
+`from X import Y` 被錯誤地把模組名 `X` 標記為未使用。
+原因：`_collect_imports` 對 `import_statement` 和 `import_from_statement` 使用相同邏輯，但前者的 `dotted_name` 是「要 import 的東西」，後者的第一個 `dotted_name` 是「從哪裡 import」。
+修法：區分兩種 statement，`from_statement` 跳過第一個 `dotted_name`。
+
+**Bug 2: AI Signature (S2) 自我誤判**
+Regex pattern 字串本身含有 "certainly"、"i cannot" 等詞，被自己偵測到。
+修法：只掃 `#` 為第一個非空白字元的純 comment 行。
+
+**Bug 3: TODO Graveyard (S13) docstring 誤判**
+docstring 裡寫到 "TODO" 就觸發規則（如檔案說明字串）。
+修法：要求 marker 出現在 `#` 之後（即真正的 comment context）。
+
+### 使用者提問
+
+**Q: 為什麼 `god_function.py` 的 `check` 函式被自己標記？**
+54 行，超過 50 行閾值。
+解法：拆成 `_check_length` 和 `_check_params` 兩個 helper，主函式縮到閾值以下。
+
+---
+
+## 2026-07-04 — GitHub Benchmark（AI vs Human Python repos）
+
+### 方法
+
+| | AI 群組 | Human 群組 |
+|---|---|---|
+| 來源 | GitHub 2024+ 且 README 有 AI 工具字眼 | GitHub 2012–2017 建立，50–600 stars |
+| 理由 | 明確 AI 輔助開發 | ChatGPT 出現前，必然為人工撰寫 |
+| 分析數量 | 400 個 Python 檔案 | 400 個 Python 檔案 |
+
+### 量化結果
+
+| 指標 | AI 群組 | Human 群組 |
+|---|---|---|
+| 平均分數 | 59.8 | 61.5 |
+| 中位數 | 65.5 | 74.0 |
+| 標準差 | 41.4 | 40.7 |
+| AUC-ROC | 0.494（≈隨機） | — |
+| p-value | 0.615（不顯著） | — |
+
+### 分類別差異
+
+| 類別 | AI 比例 | Human 比例 | 差異 |
+|---|---|---|---|
+| S9 False Safety Net | 16.8% | 12.8% | AI 較多（+4pp）|
+| S8 Magic Number（平均/檔） | 3.50 | 4.78 | **Human 較多** |
+| S4 Dead Import | 42.2% | 78.5% | **Human 遠多於 AI** |
+| S7 Void Abstraction | 33.2% | 95.0% | **Human 遠多於 AI** |
+| S3 God Function | 79.8% | 70.5% | AI 稍多 |
+| S6 Generic Naming | 76.0% | 73.8% | 幾乎相同 |
+
+### 關鍵發現（重要）
+
+**Static analysis 的 slop 規則無法可靠地區分 AI 與 Human 代碼（AUC ≈ 0.5）。**
+
+原因分析：
+1. **S8 Magic Number 在舊的 human code 更多**：2012–2017 年的 Python code 大量使用裸數字常數（科學運算、ML 參數），反而被工具標記更多次。
+2. **S4 Dead Import 在舊 code 更多**：老 Python 不像現代 IDE 會警告 unused import，死 import 更普遍。
+3. **S7 Void Abstraction 在舊 code 極多（95%）**：老 Python 喜歡 delegation pattern / getter 函式，現代 AI 生成的代碼反而更直接存取屬性。
+4. **唯一有區別力的是 S9 False Safety Net（AI 1.74x 於 human）**，但差異不夠大。
+
+### 對論文的意義
+
+- 這是一個**負面結果，但有研究價值**：純靜態 pattern 分析不足以識別 AI 代碼
+- **需要 LLM Judge 層**（S1 Ghost Comment、S10 Verbosity Inflation、S11 Redundant Docstring）才可能提升 AUC
+- **Taxonomy 需要精煉**：把 S8、S4、S7 的權重降低，或只在 AI-specific context 下才計分
+- **S9 False Safety Net 是最有區別力的靜態規則**，值得在論文中強調
+
+### 使用者提問
+
+**Q: 準確率怎麼做比較？**
+解釋：以 vibe-slop score 為二元分類器（score ≥ threshold → AI），掃 0–100 所有閾值找最高 F1，計算 AUC-ROC。結果 AUC = 0.494（≈隨機），顯示靜態規則不具區別力。
+
+**Q: 要如何改善？**
+方向：加入 LLM Judge 層（語義分析）、調整各規則的論文權重、收集更「乾淨」的 AI vs 人工標記資料集。
