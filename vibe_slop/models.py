@@ -37,6 +37,7 @@ class Finding:
     layer: Layer
     line: int              # 1-indexed; 0 means file-level
     detail: str            # explanation of this specific finding
+    suggestion: str = ""   # concrete fix suggestion
     snippet: str = ""      # relevant code snippet (optional)
 
 

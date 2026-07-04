@@ -12,13 +12,15 @@ CATEGORY_MAP = {
 }
 
 _SYSTEM = """\
-You are a code quality analyzer specializing in detecting AI-generated code anti-patterns ("vibe slop").
+You are a code quality analyzer specializing in detecting slop patterns in code — \
+verbose, redundant, or low-signal patterns that hurt readability.
 Analyze the provided code and return findings as a JSON array.
 
 Each finding must have these fields:
 - "category": one of "S1", "S10", "S11"
 - "line": integer (1-indexed line number where the issue starts)
 - "detail": string explaining the specific problem (1-2 sentences, concrete)
+- "suggestion": string with a concrete, actionable fix (1-2 sentences)
 
 Categories:
 - S1 Ghost Comment: a comment that restates what the adjacent code obviously does, adding zero information
@@ -26,7 +28,7 @@ Categories:
 - S11 Redundant Docstring: docstring that merely restates the function name or signature
 
 Return ONLY a valid JSON array. Empty array if no findings. No markdown, no explanation outside the array.
-Example: [{"category": "S1", "line": 12, "detail": "Comment 'increment counter' restates the obvious operation counter += 1"}]
+Example: [{"category": "S1", "line": 12, "detail": "Comment 'increment counter' restates counter += 1", "suggestion": "Delete the comment — the code is self-explanatory."}]
 """
 
 
@@ -65,6 +67,7 @@ def analyze_file(path: Path) -> list[Finding]:
             layer=Layer.LLM,
             line=line,
             detail=finding_data.get("detail", ""),
+            suggestion=finding_data.get("suggestion", ""),
             snippet=lines[line - 1].strip() if 0 < line <= len(lines) else "",
         ))
     return findings

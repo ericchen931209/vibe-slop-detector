@@ -17,6 +17,7 @@ def to_dict(report: FileReport) -> dict:
                 "layer": f.layer.value,
                 "line": f.line,
                 "detail": f.detail,
+                "suggestion": f.suggestion,
                 "snippet": f.snippet,
             }
             for f in sorted(report.findings, key=lambda x: x.line)

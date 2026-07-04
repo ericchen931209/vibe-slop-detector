@@ -1,18 +1,31 @@
 # vibe-slop
 
-Detect AI-generated code anti-patterns ("vibe slop") in your codebase.
+Find slop patterns in your code and get concrete fix suggestions.
+
+"Vibe slop" refers to low-quality, redundant, or low-signal code patterns — \
+common in AI-assisted coding but found anywhere — that hurt readability and maintainability.
 
 ```
-$ vibe-slop check myproject/
+$ vibe-slop check myproject/main.py
 ─────────────── vibe-slop · myproject/main.py ───────────────
   Sev    Line  Category              Detail
- ──────────────────────────────────────────────────────────── 
+ ────────────────────────────────────────────────────────────
   HIGH   1     AI Signature Phrase   AI phrase detected: "Certainly"
   HIGH   23    False Safety Net      Exception handler silently swallows errors
   MEDIUM 8     Generic Naming        "result" used 4 times
   LOW    15    Void Abstraction      "get_name" is a single-line passthrough
 
 Score: 72/100  Band: Very Sloppy
+
+Fix suggestions:
+╭─ HIGH False Safety Net (line 23) ─────────────────────────────╮
+│ Catch a specific exception type and handle it meaningfully:   │
+│ log with context, return a safe default, or re-raise.         │
+╰───────────────────────────────────────────────────────────────╯
+╭─ MEDIUM Generic Naming (line 8) ──────────────────────────────╮
+│ Rename "result" to reflect what it holds.                     │
+│ Example: "result" → "matched_products" / "parsed_config"      │
+╰───────────────────────────────────────────────────────────────╯
 ```
 
 ## Installation

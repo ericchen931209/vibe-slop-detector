@@ -30,4 +30,8 @@ def check(tree: Node, lines: list[str]) -> list[Finding]:
         layer=Layer.STATIC,
         line=hits[0],
         detail=f"{len(hits)} TODO/FIXME markers found (first at line {hits[0]})",
+        suggestion=(
+            "For each TODO: either implement it now, file a GitHub issue with the details "
+            "and replace the comment with the issue URL, or delete it if it's no longer relevant."
+        ),
     )]

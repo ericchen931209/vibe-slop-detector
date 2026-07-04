@@ -50,6 +50,11 @@ def _walk(node: Node, findings: list[Finding], lines: list[str]) -> None:
                         layer=Layer.STATIC,
                         line=line,
                         detail="Exception handler silently swallows errors (no re-raise)",
+                        suggestion=(
+                            "Catch a specific exception type and handle it meaningfully: "
+                            "log with context, return a safe default, or re-raise. "
+                            "Example: `except ValueError as e: logger.warning('...', exc_info=e); raise`"
+                        ),
                         snippet=lines[line - 1].strip() if line <= len(lines) else "",
                     ))
     for child in node.children:

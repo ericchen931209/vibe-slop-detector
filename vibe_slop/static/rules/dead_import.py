@@ -83,6 +83,7 @@ def check(tree: Node, lines: list[str]) -> list[Finding]:
                 layer=Layer.STATIC,
                 line=line,
                 detail=f'"{name}" is imported but never used',
+                suggestion=f'Remove the import of "{name}", or use it.',
                 snippet=lines[line - 1].strip() if line <= len(lines) else "",
             ))
     return findings

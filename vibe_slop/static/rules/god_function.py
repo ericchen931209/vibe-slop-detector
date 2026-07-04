@@ -31,6 +31,10 @@ def _check_length(name: str, start: int, length: int, lines: list[str]) -> Findi
         category=CATEGORY, category_name=CATEGORY_NAME,
         severity=severity, layer=Layer.STATIC, line=start,
         detail=f'"{name}" is {length} lines long (threshold: {threshold})',
+        suggestion=(
+            f'Break "{name}" into smaller focused functions, each doing one thing. '
+            "Identify logical sections (validation, transformation, I/O) and extract each as its own function."
+        ),
         snippet=_snippet(lines, start),
     )
 
@@ -43,6 +47,10 @@ def _check_params(name: str, start: int, params: Node, lines: list[str]) -> Find
         category=CATEGORY, category_name=CATEGORY_NAME,
         severity=Severity.MEDIUM, layer=Layer.STATIC, line=start,
         detail=f'"{name}" has {count} parameters (threshold: {_PARAMS_MEDIUM})',
+        suggestion=(
+            f'Group related parameters into a dataclass or TypedDict. '
+            f'Example: replace (host, port, timeout, retries) with a `ConnectionConfig` dataclass.'
+        ),
         snippet=_snippet(lines, start),
     )
 

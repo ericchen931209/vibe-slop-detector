@@ -31,6 +31,7 @@ def check(tree: Node, lines: list[str]) -> list[Finding]:
                 layer=Layer.STATIC,
                 line=i,
                 detail=f'AI phrase detected: "{phrase}"',
+                suggestion="Remove or rewrite the comment without AI assistant phrasing.",
                 snippet=line.strip(),
             ))
     return findings

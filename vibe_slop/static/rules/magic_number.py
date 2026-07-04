@@ -42,13 +42,18 @@ def check(tree: Node, lines: list[str]) -> list[Finding]:
                     "slice", "argument_list", "call", "return_statement",
                 ):
                     line = node.start_point[0] + 1
+                    val_str = node.text.decode()
                     findings.append(Finding(
                         category=CATEGORY,
                         category_name=CATEGORY_NAME,
                         severity=Severity.MEDIUM,
                         layer=Layer.STATIC,
                         line=line,
-                        detail=f"Magic number {node.text.decode()} — consider naming it as a constant",
+                        detail=f"Magic number {val_str} — consider naming it as a constant",
+                        suggestion=(
+                            f"Extract {val_str} into a named constant at the top of the file or module. "
+                            f"Example: `MAX_RETRIES = {val_str}` or `CONFIDENCE_THRESHOLD = {val_str}`."
+                        ),
                         snippet=lines[line - 1].strip() if line <= len(lines) else "",
                     ))
 

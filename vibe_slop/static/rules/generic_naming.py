@@ -41,5 +41,10 @@ def check(tree: Node, lines: list[str]) -> list[Finding]:
                 layer=Layer.STATIC,
                 line=occurrences[0],
                 detail=f'"{name}" used {len(occurrences)} times — consider a domain-specific name',
+                suggestion=(
+                    f'Rename "{name}" to reflect what it actually holds. '
+                    f'Examples: "data" → "user_records" / "api_response"; '
+                    f'"result" → "parsed_config" / "matched_products".'
+                ),
             ))
     return findings

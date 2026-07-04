@@ -56,6 +56,11 @@ def check(tree: Node, lines: list[str]) -> list[Finding]:
                     layer=Layer.STATIC,
                     line=line,
                     detail=f'"{name}" is a single-line passthrough — may be a void abstraction',
+                    suggestion=(
+                        f'If "{name}" adds no logic, call the inner function directly. '
+                        "If it's an intentional interface boundary (delegation pattern), "
+                        "add `# noqa: S7` to suppress this warning."
+                    ),
                     snippet=raw_line.strip(),
                 ))
 
